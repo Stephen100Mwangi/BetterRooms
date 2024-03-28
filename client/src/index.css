@@ -16,6 +16,27 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.scrollbar-hide {
+  /* width: 100%; */
+  overflow-y: scroll;
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none; 
+  /* Hide scrollbar for WebKit-based browsers */
+  -webkit-scrollbar {
+    display: none;
+  }
+}
+.scrollbar-hid_den {
+  /* width: 100%; */
+  overflow-x: scroll;
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none; 
+  /* Hide scrollbar for WebKit-based browsers */
+  -webkit-scrollbar {
+    display: none;
+  }
+}
+
 
 @tailwind base;
 @tailwind components;

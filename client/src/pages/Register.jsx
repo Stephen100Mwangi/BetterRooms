@@ -27,9 +27,10 @@ const Register = () => {
         }
     }
   return (
-    <div className='form w-full h-[calc(100vh-120px)] flex flex-col justify-center bg-background relative'>
-        <div className='flex justify-center items-center p-10 absolute top-0 -right-[50%] -left-[50%]'>
-            <div className="progressbar rounded-full h-1 bg-hero w-[338px] mx-auto fixed" style={{width: page === 0? "40px":page === 1?"80px":"120px"}}></div>
+    <div className='form w-full h-[calc(100vh-120px)] flex flex-col justify-center items-center bg-background relative max-sm:overflow-hidden
+    '>
+        <div className='w-[120px] items-start justify-start p-0 bg-white rounded-full fixed top-28 max-md:invisible'>
+            <div className="progressbar rounded-full h-1 bg-hero" style={{width: page === 0? "40px":page === 1?"80px":"120px"}}></div>
         </div>
         
         <div className="formContainer flex flex-col space-y-5">

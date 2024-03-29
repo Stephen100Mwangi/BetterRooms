@@ -25,7 +25,7 @@ const Hero001 = () => {
     },[])
 
     return (
-    <div className='bg-background h-[calc(100vh-120px)] px-[32px] flex flex-col relative z-[1000]'>
+    <div className='bg-background h-[calc(100vh-120px)] px-[32px] flex flex-col relative z-[800]'>
         {/* <div className='mt-[32px]'>
             <img src="\assets\logo.png" alt="" />
         </div> */}
@@ -33,7 +33,7 @@ const Hero001 = () => {
             <p className='text-2xl text-hero mt-20 font-medium z-[1000] relative'>Adventure awaits.Find your next unforgettable Airbnb.</p>
         </div>
         <div>
-            <p className='text-3xl w-1/5 text-heroTitle leading-[50px] mt-10 font-bold relative'>{titles[randomText]}</p>
+            <p className='text-3xl w-1/5 max-md:w-1/2 text-heroTitle leading-[50px] mt-10 font-bold relative'>{titles[randomText]}</p>
         </div>
 
         <div>

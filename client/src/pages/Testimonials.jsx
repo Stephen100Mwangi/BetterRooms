@@ -4,9 +4,9 @@ import { FaStarHalf } from "react-icons/fa6";
 
 const Testimonials = () => {
   return (
-    <div className='p-20 py-2 pt-0 bg-background'>
+    <div className='p-8 py-2 pt-0 bg-background max-md:p-5'>
       <h1 className='text-center text-3xl text-black mb-10 font-bold'>Don't Just Take Our Word For It: <span className='text-hero'>Guest Testimonials</span> </h1>
-      <div className="bg-hero bg-opacity-30 rounded-lg shadow-2xl w-full overflow-auto scrollbar-hide p-6 h-[90vh] flex flex-wrap justify-center items-center gap-16">
+      <div className="bg-[url('/assets/blue.jpg')] bg-cover bg-center bg-no-repeat rounded-lg shadow-2xl w-full overflow-auto scrollbar-hide p-6 h-[calc(65vh)] flex flex-wrap justify-center items-center gap-16 max-md:p-4 max-md:flex max-md:overflow-x-scroll">
         <div className="shadow-2xl flex flex-col space-y-10 justify-center items-center w-[300px] height-fit p-4 rounded-lg border-none bg-background">
           <div>
             <img src="" alt="" className='size-12 rounded-full' />

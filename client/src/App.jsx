@@ -4,14 +4,19 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Testimonials from './pages/Testimonials'
+import Listings from './pages/Listings'
 import Login from './pages/Login'
-import BasicInfo from './pages/userRegistation/BasicInfo'
 import Register from './pages/Register'
 import Chatbot from './components/Chatbot'
-import Booking from './pages/Booking'
 import Hero001 from './components/Hero001'
 import Hero002 from './components/Hero002'
 import Hero003 from './components/Hero003'
+import BookVoice from './pages/booking/BookVoice'
+import Booking from './pages/booking/Booking'
+import BookText from './pages/booking/BookText'
+
+
+
 
 const App = () => {
   return (
@@ -23,12 +28,14 @@ const App = () => {
             <Route path='/hero2' element={<h1><Hero002></Hero002></h1>}></Route>
             <Route path='/hero3' element={<h1><Hero003></Hero003></h1>}></Route>
             <Route path='/about' element={<h1><About></About></h1>}></Route>
-            <Route path='/listings' element={<h1>Listings</h1>}></Route>
+            <Route path='/listings' element={<Listings />}></Route>
             <Route path='/testimonials' element={<Testimonials></Testimonials>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/register' element={<Register></Register>}></Route>
             <Route path='/chat' element={<Chatbot></Chatbot>}></Route>
-            <Route path='/book' element={<Booking></Booking>}></Route>
+            <Route path='/voiceBook' element={<BookVoice />}></Route>
+            <Route path='/book' element={<Booking />}></Route>
+            <Route path='/bookText' element={<BookText />}></Route>
 
 
             <Route path='*' element={<h1 className='text-red'>Page Not Found</h1>}></Route>

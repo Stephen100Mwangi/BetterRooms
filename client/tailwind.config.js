@@ -12,6 +12,7 @@ export default {
       white:"#FFFFFF",
       black:"#000000",
       red:"red",
+      red_500:"#ef4444",
       slate_500:"rgb(30 41 59)"
       
 

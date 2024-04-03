@@ -1,9 +1,17 @@
 import React from 'react'
+import { FaCaretLeft, FaCaretRight } from 'react-icons/fa6'
 
 const About = () => {
   return (
     <div className='bg-background h-[calc(100vh-120px)] relative'>
-      <div className="bg-hero size-[350px] rounded-br-full absolute left-10 rounded-tr-full rounded-bl-3xl rounded-tl-full ">
+      
+      <div className='flex rounded-full size-6 bg-red_500 justify-center items-center absolute right-0 bottom-32'>
+      <FaCaretRight />
+      </div>
+      <div className='flex rounded-full size-6 bg-red_500 justify-center items-center bottom-32 absolute right-[57%]'>
+          <FaCaretLeft />
+        </div>
+      <div className="size-[350px] rounded-br-full absolute left-10 rounded-tr-full rounded-bl-3xl rounded-tl-full ">
         <img src="/assets/bed__.jpg" className='object-cover rounded-br-full w-[100%] h-[100%] rounded-tr-full rounded-bl-3xl rounded-tl-full hue-rotate-90' alt="" />
       </div>
       <div className='w-1/2 absolute right-5 text-right'>
@@ -12,6 +20,7 @@ const About = () => {
         </p>
       </div>
       <div className='w-[700px] h-[250px] px-5 absolute bottom-5 border-none rounded-lg shadow-sm right-5 flex space-x-10 overflow-x-auto scrollbar-hide'>
+        
         <div className='h-[240px] w-[200px] min-w-[200px] shadow-inner text-black my-auto rounded-lg flex items-center text-center justify-center bg-[url("/assets/customer.jpg")] bg-cover bg-center bg-no-repeat'>
           <p className='text-[20px] font-bold text-hero drop-shadow-2xl'>Customer Support Integration</p>
         </div>

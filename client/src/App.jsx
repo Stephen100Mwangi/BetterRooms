@@ -14,6 +14,8 @@ import Hero003 from './components/Hero003'
 import BookVoice from './pages/booking/BookVoice'
 import Booking from './pages/booking/Booking'
 import BookText from './pages/booking/BookText'
+import BookResult from './pages/booking/BookResult'
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 
@@ -34,8 +36,13 @@ const App = () => {
             <Route path='/register' element={<Register></Register>}></Route>
             <Route path='/chat' element={<Chatbot></Chatbot>}></Route>
             <Route path='/voiceBook' element={<BookVoice />}></Route>
-            <Route path='/book' element={<Booking />}></Route>
+           
             <Route path='/bookText' element={<BookText />}></Route>
+            <Route path='/bookResult' element={<BookResult />}></Route>
+
+            <Route element={<ProtectedRoute />}>
+              <Route path='/book' element={<Booking />}></Route>
+            </Route>
 
 
             <Route path='*' element={<h1 className='text-red'>Page Not Found</h1>}></Route>

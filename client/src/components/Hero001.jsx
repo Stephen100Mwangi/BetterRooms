@@ -25,7 +25,7 @@ const Hero001 = () => {
     },[])
 
     return (
-    <div className='bg-background min-h-[calc(100vh-120px)] px-[32px] flex flex-col relative z-[800] w-full max-'>
+    <div className='min-h-[calc(100vh-120px)] max-h-fit bg-background p-[20px] flex flex-col relative z-[800] w-full max-md:max-h-full '>
         {/* <div className='mt-[32px]'>
             <img src="\assets\logo.png" alt="" />
         </div> */}
@@ -33,11 +33,11 @@ const Hero001 = () => {
             <p className='text-2xl text-hero mt-20 font-medium z-[1000] relative'>Adventure awaits.Find your next unforgettable Airbnb.</p>
         </div>
         <div>
-            <p className='text-3xl max-md:text-[24px] w-1/5 max-md:w-1/2 text-heroTitle leading-[50px] mt-10 font-bold relative z-[800]'>{titles[randomText]}</p>
+            <p className='text-3xl max-md:text-[24px] w-1/5 max-md:w-4/5 text-heroTitle leading-[50px] mt-10 font-bold relative z-[800]'>{titles[randomText]}</p>
         </div>
 
         <div>
-            <p className='mt-6 w-2/5 text-justify font-light text-heroTitle relative text-[18px] max-md:text-[15px]'>
+            <p className='mt-6 w-2/5 text-justify font-light text-heroTitle relative text-[18px] max-md:text-[15px] max-md:w-4/5 z-[800]'>
                 Stop searching.Start Living.Discover hidden gems.charming studios and unforgettable adventures.Find an airbnb that feels like home no matter where you are.
             </p>
         </div>

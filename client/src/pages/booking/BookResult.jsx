@@ -1,14 +1,15 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa6'
+import { Link } from 'react-router-dom'
 
-const Listings = () => {
+const BookResult = () => {
   return (
     <div className='min-h-[calc(100vh-120px)] bg-background p-[20px]'>
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-wrap">
         
         <div className="flex flex-col space-y-3 m-5 mx-auto">
           <div className='w-[300px] h-[200px] rounded-lg border'>
-            <img src="/assets/kitchen.jpg" alt="" className='h-[100%] w-[100%] object-cover rounded-lg'/>
+            <Link><img src="/assets/kitchen.jpg" alt="" className='h-[100%] w-[100%] object-cover rounded-lg'/></Link>
           </div>
 
           <div className="location flex justify-between w-[300px]">
@@ -35,7 +36,7 @@ const Listings = () => {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-3 m-5 mx-auto">
+        <div className="flex flex-col space-y-3 m-5 mx-auto mx-10">
           <div className='w-[300px] h-[200px] rounded-lg border'>
             <img src="/assets/bed__.jpg" alt="" className='h-[100%] w-[100%] object-cover rounded-lg'/>
           </div>
@@ -156,4 +157,4 @@ const Listings = () => {
   )
 }
 
-export default Listings
+export default BookResult

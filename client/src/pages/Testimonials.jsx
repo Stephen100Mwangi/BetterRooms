@@ -6,7 +6,7 @@ const Testimonials = () => {
 
   const [show,setShow] = useState(true);
   return (
-    <div className='p-8 py-2 pt-0 bg-background max-md:p-5'>
+    <div className='py-2 pt-0 max-md:p-5 min-h-[calc(100vh-120px)] bg-background p-[20px] h-fit max-md:h-fit'>
 
       <h1 className='text-center text-3xl text-black mb-10 font-bold'>Don't Just Take Our Word For It: <span className='text-hero'>Guest Testimonials</span> </h1>
 
@@ -19,7 +19,7 @@ const Testimonials = () => {
             <p className='text-hero font-medium text-center my-1'>Stephen Mwangi</p>
           </div>
           <div className="content">
-          <p className='text-black font-medium text-left leading-7' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>The Airbnb was truly a Home away from Home. Johnson Brookes was my host and I must say Woow! He was such an amazing host during my stay.Without a doubt I would recommend anyone visiting London to consider booking a slot at Daima Comforts.</p>
+          <p className='text-black font-medium text-left leading-7 cursor-pointer' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>The Airbnb was truly a Home away from Home. Johnson Brookes was my host and I must say Woow! He was such an amazing host during my stay.Without a doubt I would recommend anyone visiting London to consider booking a slot at Daima Comforts.</p>
           </div>
           <div className="flex space-x-3 text-hero my-10">
           <FaStar />
@@ -38,7 +38,7 @@ const Testimonials = () => {
             <p className='text-hero font-medium text-center my-1'>Sarah Jacobs</p>
           </div>
           <div className="content">
-          <p className='text-black font-medium text-left leading-7' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>Ever heard of phenomenal? Well You need to visit Banjo Homes.The staff at this home are welcoming, cool and charming. Saying that Banjo Homes is wonderful is a downgrade.This is place is exquisite.</p>
+          <p className='text-black font-medium text-left leading-7 cursor-pointer' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>Ever heard of phenomenal? Well You need to visit Banjo Homes.The staff at this home are welcoming, cool and charming. Saying that Banjo Homes is wonderful is a downgrade.This is place is exquisite.</p>
           </div>
           <div className="flex space-x-3 text-hero my-10">
           <FaStar />
@@ -57,7 +57,7 @@ const Testimonials = () => {
             <p className='text-hero font-medium text-center my-1'>Kate Morgan</p>
           </div>
           <div className="content">
-          <p className='text-black font-medium text-left leading-7' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>I am ashamed to not know that @7Homes exists. If you are visiting Kenya consider value for your money.And where else to spend your time other that 7Homes a place live with the greenery of the forested area an aura of life and cool waters of Lake Victoria .Phenomenal Simple Phenomenal</p>
+          <p className='text-black font-medium text-left leading-7 cursor-pointer' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>I am ashamed to not know that @7Homes exists. If you are visiting Kenya consider value for your money.And where else to spend your time other that 7Homes a place live with the greenery of the forested area an aura of life and cool waters of Lake Victoria .Phenomenal Simple Phenomenal</p>
           </div>
           <div className="flex space-x-3 text-hero my-10">
           <FaStar />
@@ -76,7 +76,7 @@ const Testimonials = () => {
             <p className='text-hero font-medium text-center my-1'>Samson Ndegwa</p>
           </div>
           <div className="content">
-          <p className='text-black font-medium text-left leading-7' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>
+          <p className='text-black font-medium text-left leading-7 cursor-pointer' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>
             Forget stuffy hotels, in London I found the magic of Daima Comforts! It wasn't just an Airbnb, it was like Bilbo Baggins' cozy hobbit hole in the heart of the city. My host, Johnson Brookes, deserves a standing ovation for his hospitality!  If you're ever on a quest through London, skip the mundane and bed down at Daima Comforts. It'll be an adventure fit for a hobbit (or anyone who appreciates a delightful stay)!</p>
           </div>
           <div className="flex space-x-3 text-hero my-10">
@@ -97,7 +97,7 @@ const Testimonials = () => {
           </div>
           <div className="content">
 
-            <p className='text-black font-medium text-left leading-7' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>
+            <p className='text-black font-medium text-left leading-7 cursor-pointer' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>
               In London, I stumbled upon a hidden gem: Daima Comforts! It wasn't just an Airbnb, it was a portal to a cozy, homey wonderland. And Johnson Brookes, the host? Well, let's just say he deserves a medal for hospitality! If you're ever adventuring through London, ditch the ordinary and book a stay at Daima Comforts. Trust me, it'll be like stepping into a warm hug from the city itself.
             </p>
           </div>

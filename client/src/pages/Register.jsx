@@ -27,8 +27,7 @@ const Register = () => {
         }
     }
   return (
-    <div className='form w-full h-[calc(100vh-120px)] flex flex-col justify-center items-center bg-background relative max-sm:overflow-hidden
-    '>
+    <div className='min-h-[calc(100vh-120px)] flex flex-col justify-center items-center bg-background relative max-sm:overflow-hidden'>
         <div className='w-[120px] items-start justify-start p-0 bg-white rounded-full fixed top-28 max-md:invisible'>
             <div className="progressbar rounded-full h-1 bg-hero" style={{width: page === 0? "40px":page === 1?"80px":"120px"}}></div>
         </div>
@@ -41,7 +40,7 @@ const Register = () => {
                 {pageDisplay()}
             </div>
             <div className="flex space-x-5 justify-center">
-                <button onClick={()=> setPage((currentPage) => currentPage - 1)} disabled={page == 0}  className='bg-hero rounded-lg text-white shadow-2xl p-3 px-6'>Previous</button>
+                <button onClick={()=> setPage((currentPage) => currentPage - 1)} disabled={page == 0}  className='bg-hero rounded-md text-white shadow-2xl p-3 items-center flex justify-center px-6'>Previous</button>
                 <button onClick={()=> {
                     if (page === titles.length - 1) {
                         alert("Submitted")

@@ -6,7 +6,7 @@ const Payment = ({formData,setData}) => {
     <form className='flex flex-col space-y-5 rounded-lg shadow-2xl p-6'>
         <h1 className='text-center text-2xl text-hero'>Select Payment Method</h1>
       
-      <div className="flex rounded-lg ring-1 ring-hero p-2 justify-center items-center space-x-5">
+      <div className="flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal">
             <MdPayment className='text-black'/>
             <input type="text" name="" id="" disabled className='bg-white text-black outline-none bg-opacity-0' placeholder='Payment Mode'/>
         </div>

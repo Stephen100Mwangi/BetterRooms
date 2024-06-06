@@ -4,9 +4,10 @@ import { useState } from 'react'
 import { MdLockPerson } from "react-icons/md";
 import { MdAlternateEmail } from "react-icons/md";
 import { Link, useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { login } from '../features/users/UserSlice';
+import { login, logout } from '../features/users/UserSlice';
 
 const Login = () => {
 
@@ -20,12 +21,19 @@ const Login = () => {
       e.preventDefault();
      
       dispatch(login({email:email,id:89}));
+      toast.success("Login Successful")
+      setTimeout(() => {
+        navigate("/profile");
+      }, 3000);
 
     }
+
+    
     console.log(user);
 
   return (
     <div className='bg-background h-[calc(100vh-120px)] flex justify-center pt-5'>
+      <Toaster />
          <form className='w-[338px] h-fit rounded-[10px] flex flex-col space-y-6 shadow-2xl justify-center items-center py-[32px] px-[10px] max-sm:w-[300px]'>
                 <h1 className='text-hero text-3xl font-medium'>Login Here</h1>
                

@@ -1,8 +1,26 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { login, logout } from '../features/users/UserSlice';
 
 const UserProfile = () => {
     const [showBio,setShowBio] = useState(false);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleLogOut = async() => {
+
+        dispatch(logout({email:"",id:null,loggedIn:false}));
+        toast.loading("You are about to exit this page");
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
+  
+      }
 
 
   return (
@@ -21,7 +39,7 @@ const UserProfile = () => {
                             <p className='font-light text-sm'>mwangiwahome70@gmail.com</p>
                             <p className='font-mono text-sm'>11328900</p>
                             <p className='cursor-pointer text-red font-light text-sm'>Change Password</p>
-                            <div className="cursor-pointer flex items-center justify-center space-x-3">
+                            <div onClick={handleLogOut} className="cursor-pointer flex items-center justify-center space-x-3">
                                <p>Sign Out</p>
                             </div>
                         </div>

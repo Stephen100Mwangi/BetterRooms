@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { useState } from 'react'
 import Optional from './Optional'
@@ -7,12 +8,17 @@ import Payment from './Payment'
 const BookText = () => {
 
     const [formData,setData] = useState({
-        name:"",
-        email:"",
-        phone:"",
-        payment:"",
-        timeSpent:"",
-        moneyBudget:""
+        city:"",
+        neighborhood:"",
+        roomType:"",
+        propertyType:"",
+        priceRange:"",
+        minimumReviews:0,
+        availability:0,
+        minimumRating:1.0,
+        minimumNights:0,
+        no_Beds:0,
+        no_Bedrooms:0
     })
 
     const titles = ["Mandatory Features","Payment","Optional Features"];

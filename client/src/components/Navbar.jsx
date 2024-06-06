@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { FaHamburger } from 'react-icons/fa'
 import { Link } from 'react-router-dom'

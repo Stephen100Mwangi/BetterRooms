@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
@@ -16,6 +17,7 @@ import Booking from './pages/booking/Booking'
 import BookText from './pages/booking/BookText'
 import BookResult from './pages/booking/BookResult'
 import ProtectedRoute from './components/ProtectedRoute'
+import UserProfile from './pages/UserProfile'
 
 
 
@@ -40,9 +42,11 @@ const App = () => {
             <Route path='/bookText' element={<BookText />}></Route>
             <Route path='/bookResult' element={<BookResult />}></Route>
 
-            <Route element={<ProtectedRoute />}>
+            {/* <Route element={<ProtectedRoute />}> */}
               <Route path='/book' element={<Booking />}></Route>
-            </Route>
+            {/* </Route> */}
+
+            <Route path='/profile' element={<UserProfile />}></Route>
 
 
             <Route path='*' element={<h1 className='text-red'>Page Not Found</h1>}></Route>

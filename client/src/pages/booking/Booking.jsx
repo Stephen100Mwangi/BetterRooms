@@ -1,5 +1,3 @@
-import React from 'react'
-import { FaBook } from 'react-icons/fa'
 import { HiMiniPencilSquare } from "react-icons/hi2";
 import { RiUserVoiceFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
@@ -12,14 +10,14 @@ function Booking() {
         </div>
         <div className="flex space-x-10">
             <Link to='/voiceBook'>
-                <div className='text-white bg-red_500 text-[18px] p-3 px-10 rounded-md shadow-2xl space-x-3 text-center flex-col space-y-5 justify-center flex items-center'>
+                <div className='bg-red_500 bg-opacity-55 text-black text-[18px] py-4 px-6 rounded-md shadow-2xl space-x-3 text-center flex-col space-y-5 justify-center flex items-center'>
                     <RiUserVoiceFill className='text-2xl'/>
                     <p className='font-semibold'>Book via voice-input</p>
                 </div>
             </Link>
 
             <Link to='/bookText'>
-                <div className='text-white bg-hero text-[18px] p-3 px-10 rounded-md shadow-2xl space-x-3 text-center flex-col space-y-5 justify-center flex items-center'>
+                <div className='text-white bg-hero text-[18px] py-4 px-6 rounded-md shadow-2xl space-x-3 text-center flex-col space-y-5 justify-center flex items-center max-md:p-1 max-md:text-[12px]'>
                     <HiMiniPencilSquare className='text-2xl' />
                     <p className='font-semibold'>Book via text-input</p>
                 </div>

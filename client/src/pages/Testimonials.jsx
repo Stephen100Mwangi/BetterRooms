@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { FaStar } from "react-icons/fa6";
 import { FaStarHalf } from "react-icons/fa6";
@@ -57,7 +59,7 @@ const Testimonials = () => {
             <p className='text-hero font-medium text-center my-1'>Kate Morgan</p>
           </div>
           <div className="content">
-          <p className='text-black font-medium text-left leading-7 cursor-pointer' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>I am ashamed to not know that @7Homes exists. If you are visiting Kenya consider value for your money.And where else to spend your time other that 7Homes a place live with the greenery of the forested area an aura of life and cool waters of Lake Victoria .Phenomenal Simple Phenomenal</p>
+          <p className='text-black font-medium text-left leading-7 cursor-pointer' onClick={() => setShow(!show)} style={show?{ WebkitLineClamp: 5, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }:{}}>I am ashamed to not know that @7Homes existed earlier. If you are visiting Kenya consider value for your money.And where else to spend your time other that 7Homes a place live with the greenery of the forested area, an aura of life and cool waters of Lake Victoria .Phenomenal Simply Phenomenal</p>
           </div>
           <div className="flex space-x-3 text-hero my-10">
           <FaStar />

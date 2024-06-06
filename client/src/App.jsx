@@ -27,11 +27,11 @@ const App = () => {
     <BrowserRouter>
         <Navbar/>
         <Routes>
-            <Route path='/' element={<h1><Home></Home></h1>}></Route>
-            <Route path='/hero1' element={<h1><Hero001></Hero001></h1>}></Route>
-            <Route path='/hero2' element={<h1><Hero002></Hero002></h1>}></Route>
-            <Route path='/hero3' element={<h1><Hero003></Hero003></h1>}></Route>
-            <Route path='/about' element={<h1><About></About></h1>}></Route>
+            <Route path='/' element={<><Home></Home></>}></Route>
+            <Route path='/hero1' element={<><Hero001></Hero001></>}></Route>
+            <Route path='/hero2' element={<><Hero002></Hero002></>}></Route>
+            <Route path='/hero3' element={<><Hero003></Hero003></>}></Route>
+            <Route path='/about' element={<><About></About></>}></Route>
             <Route path='/listings' element={<Listings />}></Route>
             <Route path='/testimonials' element={<Testimonials></Testimonials>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
@@ -39,14 +39,15 @@ const App = () => {
             <Route path='/chat' element={<Chatbot></Chatbot>}></Route>
             <Route path='/voiceBook' element={<BookVoice />}></Route>
            
-            <Route path='/bookText' element={<BookText />}></Route>
-            <Route path='/bookResult' element={<BookResult />}></Route>
+            
 
-            {/* <Route element={<ProtectedRoute />}> */}
+            {/* Protect Route to ensure user is logged in */}
+            <Route path='' element={<ProtectedRoute />}>
+              <Route path='/bookText' element={<BookText />}></Route>
+              <Route path='/bookResult' element={<BookResult />}></Route>
               <Route path='/book' element={<Booking />}></Route>
-            {/* </Route> */}
-
-            <Route path='/profile' element={<UserProfile />}></Route>
+              <Route path='/profile' element={<UserProfile />}></Route>
+            </Route>
 
 
             <Route path='*' element={<h1 className='text-red'>Page Not Found</h1>}></Route>

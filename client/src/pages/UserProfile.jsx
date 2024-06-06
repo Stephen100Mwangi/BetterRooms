@@ -2,9 +2,9 @@
 import React, { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { login, logout } from '../features/users/UserSlice';
+import { logout } from '../features/users/UserSlice';
 
 const UserProfile = () => {
     const [showBio,setShowBio] = useState(false);
@@ -15,7 +15,7 @@ const UserProfile = () => {
     const handleLogOut = async() => {
 
         dispatch(logout({email:"",id:null,loggedIn:false}));
-        toast.loading("You are about to exit this page");
+        toast.custom("You are about to exit this page");
         setTimeout(() => {
           navigate("/login");
         }, 3000);
@@ -24,12 +24,15 @@ const UserProfile = () => {
 
 
   return (
-    <div className='flex flex-col space-y-10 min-h-screen bg-background px-8'>
-        <div className="navbar">
+    <div className='flex flex-col min-h-screen bg-background px-8'>
+        <Toaster></Toaster>
+        <div className="navbar -mt-5 mb-24">
             <div className="relative w-full flex justify-end items-end space-y-6 flex-col">
-                <div onClick={()=>setShowBio(!showBio)} className="cursor-pointer flex items-center justify-center bg-hero text-[28px] text-background size-10 font-extrabold rounded-full overflow-clip">
+                <div className=" absolute top-3 right-[4px] flex size-8 justify-center items-center rounded-full animate-ping border-hero border-2"></div>
+                <div onClick={()=>setShowBio(!showBio)} className="absolute -top-4 right-0 cursor-pointer flex items-center bg-hero justify-center text-[30px] font-light text-background size-10 rounded-full overflow-clip animate-none">
                     SM
                 </div>
+                
 
                 {
                     showBio && (

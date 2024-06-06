@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
-import { FaHamburger } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { MdClose } from 'react-icons/md'
 import { MdMenu } from 'react-icons/md'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
   const [mobile,setMobile] = useState(false)
+  const user = useSelector((state)=>state.user.value);
+  const userLoggedIn = user.loggedIn;
   return (
     <div className='flex p-8 justify-between items-center bg-background relative w-full'>
         <img src="/assets/logo.png" alt="" />
@@ -17,7 +19,13 @@ const Navbar = () => {
             <Link to='/listings'>Our Listings</Link>
             <Link to='/testimonials'>Testimonials</Link>
             <Link to='/book'>Book Accommodation</Link>
-            <Link to='/register'>Register/Login</Link>
+            {
+              userLoggedIn &&  <Link to='/profile' className='text-red'>Sign Out</Link>
+            }
+            {
+              !userLoggedIn &&  <Link to='/register'>Register/Login</Link>
+            }
+           
         </div>
         {
           !mobile && <MdMenu className='text-hero absolute top-7 right-7 invisible max-lg:visible' onClick={()=>setMobile(!mobile)} />
@@ -33,7 +41,12 @@ const Navbar = () => {
             <Link to='/listings'>Our Listings</Link>
             <Link to='/testimonials'>Testimonials</Link>
             <Link to='/book'>Book Accommodation</Link>
-            <Link to='/register'>Register/Login</Link>
+            {
+              userLoggedIn &&  <Link to='/profile' className='text-red'>Sign Out</Link>
+            }
+            {
+              !userLoggedIn &&  <Link to='/register'>Register/Login</Link>
+            }
           </div>
 
           )

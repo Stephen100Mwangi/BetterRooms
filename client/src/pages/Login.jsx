@@ -37,15 +37,15 @@ const Login = () => {
          <form className='w-[338px] h-fit rounded-[10px] flex flex-col space-y-6 shadow-2xl justify-center items-center py-[32px] px-[10px] max-sm:w-[300px]'>
                 <h1 className='text-hero text-3xl font-medium'>Login Here</h1>
                
-                <div className='flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
+                <div className='w-[95%] flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
                     <MdAlternateEmail className='text-black'/>
-                    <input type="text" name="email" id="email" placeholder='Email' className='bg-white bg-opacity-0 outline-none text-black' autoComplete='off' autoSave='off' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                    <input type="text" name="email" id="email" placeholder='Email' className='bg-white bg-opacity-0 outline-none text-black w-full py-2' autoComplete='off' autoSave='off' value={email} onChange={(e)=>setEmail(e.target.value)}/>
                 </div>
-                <div className='flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
+                <div className='w-[95%] flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
                     <MdLockPerson className='text-black'/>
-                    <input type="password" name="password" id="password" placeholder='Password' className='bg-white bg-opacity-0 outline-none text-black' autoComplete='off' autoSave='off' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                    <input type="password" name="password" id="password" placeholder='Password' className='bg-white bg-opacity-0 outline-none text-black w-full p-2' autoComplete='off' autoSave='off' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                 </div>
-                <button type='submit' onClick={handleSubmit} className='bg-hero rounded-md text-white shadow-2xl py-3 w-full'>Login</button>
+                <button type='submit' onClick={handleSubmit} className='bg-hero rounded-md text-white shadow-2xl py-3 w-[95%]'>Login</button>
                 <div className="flex space-x-3">
                     <p className='text-black'>Do not have an account</p>
                     <Link to='/register' className='text-hero'>Register Here</Link>

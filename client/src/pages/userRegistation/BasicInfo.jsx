@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { FaUser } from 'react-icons/fa';
 import { MdLockPerson } from "react-icons/md";
@@ -17,15 +18,15 @@ const BasicInfo = ({formData, setFormData})=>{
                 <h1 className='text-hero text-3xl font-medium'>Register Here</h1>
                 <div className='flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
                     <FaUser className='text-black'/>
-                    <input type="text" name="name" id="name" placeholder='Name' className='bg-white bg-opacity-0 outline-none text-black'  autoComplete='off' autoSave='off' value={formData.name} onChange={(e)=>setFormData({...formData,name:e.target.value})}/>
+                    <input type="text" name="name" id="name" placeholder='Name' className='py-2 bg-white bg-opacity-0 outline-none text-black'  autoComplete='off' autoSave='off' value={formData.name} onChange={(e)=>setFormData({...formData,name:e.target.value})}/>
                 </div>
                 <div className='flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
                     <MdAlternateEmail className='text-black'/>
-                    <input type="email" name="email" id="email" placeholder='Email' className='bg-white bg-opacity-0 outline-none  text-black'  autoComplete='off' autoSave='off' value={formData.email} onChange={(e)=>setFormData({...formData,email:e.target.value})}/>
+                    <input type="email" name="email" id="email" placeholder='Email' className='py-2 bg-white bg-opacity-0 outline-none  text-black'  autoComplete='off' autoSave='off' value={formData.email} onChange={(e)=>setFormData({...formData,email:e.target.value})}/>
                 </div>
                 <div className='flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
                     <MdLockPerson className='text-black'/>
-                    <input type="password" name="password" id="password" placeholder='Password' className='bg-white bg-opacity-0 outline-none  text-black'  autoComplete='off' autoSave='off' value={formData.password} onChange={(e)=>setFormData({...formData,password:e.target.value})}/>
+                    <input type="password" name="password" id="password" placeholder='Password' className='py-2 bg-white bg-opacity-0 outline-none  text-black'  autoComplete='off' autoSave='off' value={formData.password} onChange={(e)=>setFormData({...formData,password:e.target.value})}/>
                 </div>
                 <div className="flex space-x-3">
                     <p className='text-black'>Already have an account</p>

@@ -2,6 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { MdLocationCity } from "react-icons/md";
+import { FaMicrophoneLines } from "react-icons/fa6";
 // import { MdEmail, MdPayment, MdPerson, MdPhone } from 'react-icons/md'
 
 // eslint-disable-next-line react/prop-types

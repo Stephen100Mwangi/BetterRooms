@@ -18,6 +18,8 @@ import BookText from './pages/booking/BookText'
 import BookResult from './pages/booking/BookResult'
 import ProtectedRoute from './components/ProtectedRoute'
 import UserProfile from './pages/UserProfile'
+import ListingOutput from './components/ListingOutput'
+import UserListings from './pages/UserListings'
 
 
 
@@ -38,6 +40,7 @@ const App = () => {
             <Route path='/register' element={<Register></Register>}></Route>
             <Route path='/chat' element={<Chatbot></Chatbot>}></Route>
             <Route path='/voiceBook' element={<BookVoice />}></Route>
+            <Route path='/listing_output' element={<UserListings />}></Route>
            
             
 

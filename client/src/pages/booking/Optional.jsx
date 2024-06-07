@@ -19,7 +19,7 @@ const Optional = ({formData,setData}) => {
 
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Availability(Days per Year)">Minimum Availability(Days per Year)</label>
-            <input className='px-6 p-2 outline-hero' min={1} max={356} type="number" name="" value={formData.availability}  onChange={(e)=>setData({...formData,availability:e.target.value})} placeholder="0" />
+            <input className='px-6 p-2 outline-hero' min={1} max={365} type="number" name="" value={formData.availability}  onChange={(e)=>setData({...formData,availability:e.target.value})} placeholder="0" />
         </div>
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Number of Reviews">Minimum Number of Reviews</label>
@@ -35,11 +35,11 @@ const Optional = ({formData,setData}) => {
         </div>
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Number of Beds">Minimum Number of Beds</label>
-            <input className='px-6 p-2 outline-hero' type="number" value={formData.no_Beds}  onChange={(e)=>setData({...formData,no_Beds:e.target.value})} placeholder="0" />
+            <input className='px-6 p-2 outline-hero' min={1} max={10} type="number" value={formData.no_Beds}  onChange={(e)=>setData({...formData,no_Beds:e.target.value})} placeholder="0" />
         </div>
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Number of Bedrooms">Minimum Number of Bedrooms</label>
-            <input className='px-6 p-2 outline-hero' type="number" value={formData.no_Bedrooms}  onChange={(e)=>setData({...formData,no_Bedrooms:e.target.value})} placeholder="0" />
+            <input className='px-6 p-2 outline-hero' min={1} max={10} type="number" value={formData.no_Bedrooms}  onChange={(e)=>setData({...formData,no_Bedrooms:e.target.value})} placeholder="0" />
         </div>
         {/* <MdLockClock className='text-black'/>
             <select name="bookType" id="" className='bg-white text-black outline-none bg-opacity-0' >

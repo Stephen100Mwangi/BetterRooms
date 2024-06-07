@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { MdClose } from 'react-icons/md'
 import { MdMenu } from 'react-icons/md'
 import { useSelector } from 'react-redux'
+import { AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineLogin } from "react-icons/ai";
 
 const Navbar = () => {
   const [mobile,setMobile] = useState(false)

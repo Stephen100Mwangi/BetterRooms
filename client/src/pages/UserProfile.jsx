@@ -34,8 +34,7 @@ const UserProfile = () => {
             Swal.fire({
                 title: 'Seems you want to leave?',
                 text: 'You will be redirected to another page.',
-                iconHtml: <img src={icon} className='' alt="leave" />,
-                // icon: 'info',
+                icon: 'info',
                 showCancelButton: true,
                 cancelButtonColor: '#0E77F4',
                 confirmButtonColor:'#ef4444',

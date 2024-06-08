@@ -3,14 +3,16 @@ import React from 'react'
 import ListingOutput from '../components/ListingOutput'
 import { FaHeart, FaStar, FaThumbsUp } from 'react-icons/fa6'
 import { IoReturnUpBack } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 const UserListings = () => {
+    const navigate = useNavigate();
   return (
     <div className='flex flex-col space-y-10 px-8 bg-background min-h-screen'>
         <div className="title">
             <div className="flex justify-center items-center space-x-10 relative">
-                <div className="back absolute top-4 left-0">
-                    <IoReturnUpBack />
+                <div className="back absolute top-4 left-0" onClick={()=>navigate('/')}>
+                    <IoReturnUpBack className='text-3xl' />
                 </div>
                 <h1 className='w-[360px] text-center font-bold text-3xl'>Available Homes That Suites <span className='decoration-clone text-red_500'>Your Search</span></h1>
             </div>

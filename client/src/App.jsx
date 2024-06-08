@@ -20,6 +20,8 @@ import ProtectedRoute from './components/ProtectedRoute'
 import UserProfile from './pages/UserProfile'
 import ListingOutput from './components/ListingOutput'
 import UserListings from './pages/UserListings'
+import PageNotFound from './pages/PageNotFound'
+import Footer from './components/Footer'
 
 
 
@@ -41,8 +43,6 @@ const App = () => {
             <Route path='/chat' element={<Chatbot></Chatbot>}></Route>
             <Route path='/voiceBook' element={<BookVoice />}></Route>
             <Route path='/listing_output' element={<UserListings />}></Route>
-           
-            
 
             {/* Protect Route to ensure user is logged in */}
             <Route path='' element={<ProtectedRoute />}>
@@ -52,9 +52,9 @@ const App = () => {
               <Route path='/profile' element={<UserProfile />}></Route>
             </Route>
 
-
-            <Route path='*' element={<h1 className='text-red'>Page Not Found</h1>}></Route>
+            <Route path='*' element={<PageNotFound />}></Route>
         </Routes>
+        <Footer />
     </BrowserRouter>
   )
 }

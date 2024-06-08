@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
-import { FaStar } from 'react-icons/fa6'
+import { FaStar, FaHeart, FaThumbsUp } from 'react-icons/fa6'
+import ListingOutput from '../components/ListingOutput'
 
 const Listings = () => {
   return (
@@ -7,147 +9,19 @@ const Listings = () => {
       <div className="flex flex-wrap gap-5">
         
         <div className="flex flex-col space-y-3 m-5 mx-auto">
-          <div className='w-[300px] h-[200px] rounded-lg border'>
-            <img src="/assets/kitchen.jpg" alt="" className='h-[100%] w-[100%] object-cover rounded-lg'/>
+          <div className='w-full items-center justify-center flex'>
+            <h1 className='w-[450px] leading-relaxed text-center font-bold text-3xl'>Available Homes Awaiting You <span className='decoration-clone text-red_500'>Home Away From Home</span></h1>
           </div>
-
-          <div className="location flex justify-between w-[300px]">
-            <p className='text-black font-bold'>Location</p>
-            <div className="rating flex space-x-3 items-center">
-              <div className="rate flex">
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-              </div>
-              <div className="rate__figure font-normal text-hero">4.5</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-1">
-              <div className="capacity">
-                <p className='text-hero font-light'>2 persons</p>
-              </div>
-              <div className="price">
-                <p className='text-hero font-light'>$45 per night per person</p>
-              </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col space-y-3 m-5 mx-auto">
-          <div className='w-[300px] h-[200px] rounded-lg border'>
-            <img src="/assets/bed__.jpg" alt="" className='h-[100%] w-[100%] object-cover rounded-lg'/>
-          </div>
-
-          <div className="location flex justify-between w-[300px]">
-            <p className='text-black font-bold'>Location</p>
-            <div className="rating flex space-x-3 items-center">
-              <div className="rate flex">
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-              </div>
-              <div className="rate__figure font-normal text-hero">4.5</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-1">
-              <div className="capacity">
-                <p className='text-hero font-light'>2 persons</p>
-              </div>
-              <div className="price">
-                <p className='text-hero font-light'>$45 per night per person</p>
-              </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col space-y-3 m-5 mx-auto">
-          <div className='w-[300px] h-[200px] rounded-lg border'>
-            <img src="/assets/personal.jpg" alt="" className='h-[100%] w-[100%] object-cover rounded-lg'/>
-          </div>
-
-          <div className="location flex justify-between w-[300px]">
-            <p className='text-black font-bold'>Location</p>
-            <div className="rating flex space-x-3 items-center">
-              <div className="rate flex">
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-              </div>
-              <div className="rate__figure font-normal text-hero">4.5</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-1">
-              <div className="capacity">
-                <p className='text-hero font-light'>2 persons</p>
-              </div>
-              <div className="price">
-                <p className='text-hero font-light'>$45 per night per person</p>
-              </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col space-y-3 m-5 mx-auto">
-          <div className='w-[300px] h-[200px] rounded-lg border'>
-            <img src="/assets/lights.jpg" alt="" className='h-[100%] w-[100%] object-cover rounded-lg'/>
-          </div>
-
-          <div className="location flex justify-between w-[300px]">
-            <p className='text-black font-bold'>Location</p>
-            <div className="rating flex space-x-3 items-center">
-              <div className="rate flex">
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-              </div>
-              <div className="rate__figure font-normal text-hero">4.5</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-1">
-              <div className="capacity">
-                <p className='text-hero font-light'>2 persons</p>
-              </div>
-              <div className="price">
-                <p className='text-hero font-light'>$45 per night per person</p>
-              </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col space-y-3 m-5 mx-auto">
-          <div className='w-[300px] h-[200px] rounded-lg border'>
-            <img src="/assets/relax_.jpg" alt="" className='h-[100%] w-[100%] object-cover rounded-lg'/>
-          </div>
-
-          <div className="location flex justify-between w-[300px]">
-            <p className='text-black font-bold'>Location</p>
-            <div className="rating flex space-x-3 items-center">
-              <div className="rate flex">
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-                <FaStar className='text-hero'/>
-              </div>
-              <div className="rate__figure font-normal text-hero">4.5</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-1">
-              <div className="capacity">
-                <p className='text-hero font-light'>2 persons</p>
-              </div>
-              <div className="price">
-                <p className='text-hero font-light'>$45 per night per person</p>
-              </div>
+          <div className="flex items-center justify-center gap-20 pb-20 pt-10 flex-wrap">
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/bed__.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/personalized.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/bed__.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/personal.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/sofa.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/bed__.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/kitchen.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/lights.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+            <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/bed.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
           </div>
         </div>
       </div>

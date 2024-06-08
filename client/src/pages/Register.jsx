@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { useState } from 'react';
 import BasicInfo from './userRegistation/BasicInfo';
 import FaceScan from './userRegistation/FaceScan';
 import ConfirmRegister from './userRegistation/ConfirmRegister';
+import toast, { Toaster } from 'react'
 
 const Register = () => {
 

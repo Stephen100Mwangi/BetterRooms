@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 const ListingOutput = ({image,price,reviews,rate,name,location,like,favorite,star,stars}) => {
   return (
     <div className='flex flex-col w-fit space-y-2 rounded-lg'>
-        <div className="image w-[300px] rounded-lg">
-            <img src={image} alt="Listing" className='object-cover rounded-lg' />
+        <div className="image w-[300px] h-[200px] rounded-lg mb-5">
+            <img src={image} alt="Listing" className='object-cover w-[300px] h-[200px] rounded-lg' />
         </div>
         <div className='flex justify-between items-center'>
             <div className="flex items-center justify-center">

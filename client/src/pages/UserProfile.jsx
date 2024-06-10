@@ -18,6 +18,7 @@ import { MdAttachMoney } from "react-icons/md";
 import { AiOutlineApartment } from "react-icons/ai";
 import { GiBunkBeds } from "react-icons/gi";
 import { GiDoorHandle } from "react-icons/gi";
+import { AiOutlineLogout } from "react-icons/ai";
 
 import Swal from 'sweetalert2';
 
@@ -49,7 +50,22 @@ const UserProfile = () => {
                 }
             })
         )
-      }
+    }
+    const addComment = async () => {
+        Swal.fire({
+            text: 'Leave your thoughts here',
+            confirmButtonColor:'#0E77F4',
+            showConfirmButton: true,
+            confirmButtonText: 'Add comment',
+            cancelButtonColor: '',
+            cancelButtonText: 'Not Now',
+            inputPlaceholder:'Start typing',
+            inputAutoFocus: true,
+            input: true,
+            icon: 'question',
+        })
+
+    }
 
 
   return (
@@ -67,12 +83,13 @@ const UserProfile = () => {
                     showBio && (
                         <div className="z-50 absolute bg-white top-10 right-0 personalBio shadow-base rounded-base p-4 flex flex-col space-y-4">
                             <p className="font-bold text-base">Stephen Mwangi</p>
-                            <p className='font-medium text-sm'>Male</p>
                             <p className='font-light text-sm'>mwangiwahome70@gmail.com</p>
-                            <p className='font-mono text-sm'>11324900</p>
+                            <p className='font-mono text-sm'>+254758725032</p>
                             <p className='cursor-pointer text-red font-light text-sm'>Change Password</p>
-                            <div onClick={handleLogOut} className="cursor-pointer flex items-center justify-center space-x-3">
+                            <button className='px-6 p-2 bg-hero text-background' onClick={addComment}>Leave a comment</button>
+                            <div onClick={handleLogOut} className="cursor-pointer flex items-center justify-center space-x-3 bg-red_500 py-2 text-white">
                                <p>Sign Out</p>
+                               <div><AiOutlineLogout /></div>
                             </div>
                         </div>
 

@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import BasicInfo from "./userRegistation/BasicInfo";
 import FaceScan from "./userRegistation/FaceScan";
 import ConfirmRegister from "./userRegistation/ConfirmRegister";
 import toast, { Toaster } from 'react-hot-toast';
-import axios from "axios";
+import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -18,7 +18,7 @@ const Register = () => {
     email: "",
     password: "",
     confirm_password: "",
-    confirmRegistation: false,
+    confirmRegister: false,
     faceScanSuccess: false,
   });
 
@@ -35,12 +35,7 @@ const Register = () => {
 
   // Register user
   const handleRegister = async () => {
-    const username = formData.username;
-    const email = formData.email;
-    const password = formData.confirmRegistation;
-    const confirm_password = formData.confirm_password;
-    const confirmRegister = formData.confirmRegister;
-    const faceScan = formData.faceScanSuccess;
+    const { username, email, password, confirm_password, confirmRegister, faceScanSuccess } = formData;
 
     if (!username) {
       return toast.error("Username cannot be empty");
@@ -57,7 +52,7 @@ const Register = () => {
     if (password !== confirm_password) {
       return toast.error("Confirmation password must match password");
     }
-    if (!faceScan) {
+    if (!faceScanSuccess) {
       return toast.error("Face capture was not successful");
     }
     if (!confirmRegister) {
@@ -66,19 +61,16 @@ const Register = () => {
       );
     }
 
+
     try {
-      const response = await axios.post("http://localhost:6650/createUser", {
-        username,
-        email,
-        password,
-        confirm_password,
-        confirmRegister,
-        faceScan,
-      });
+      const response = await axios.post("http://localhost:6650/createUser", {username,email,password,confirm_password,confirmRegister,faceScanSuccess});
+
+      console.log("Response from server:", response);
 
       if (response.data.message === "Password is too short") {
         toast.error("Password is too short");
       }
+
       if (
         response.data.message ===
         "Password must be at least 10 characters long, with at least one digit, one uppercase letter, one lowercase letter, and one special character."
@@ -87,6 +79,7 @@ const Register = () => {
           "Password must be at least 10 characters long, with at least one digit, one uppercase letter, one lowercase letter, and one special character."
         );
       }
+
       if (response.data.message === "Invalid email") {
         toast.error("Please type a valid email");
       }
@@ -97,8 +90,8 @@ const Register = () => {
       }
 
     } catch (error) {
-      console.log("Error creating user");
-      return toast.error("OOps! User registration failed.Please try again");
+      console.log("Error creating user"+  error.response ? error.response.data : error.message);
+      return toast.error("Oops! User registration failed.Please try again");
     }
   };
   return (
@@ -124,7 +117,7 @@ const Register = () => {
           <button
             onClick={() => {
               if (page === titles.length - 1) {
-                handleRegister;
+                handleRegister();
               } else {
                 setPage((currentPage) => currentPage + 1);
               }

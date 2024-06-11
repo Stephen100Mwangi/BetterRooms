@@ -9,6 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../features/users/UserSlice';
 import axios from 'axios'
+import { FaRegEye } from "react-icons/fa";
 
 const Login = () => {
 
@@ -19,6 +20,11 @@ const Login = () => {
     
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
+
+  const [pass_data,setPassData] = useState(true);
+  const showPassword = ()=>{
+    setPassData(!pass_data)
+}
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -82,7 +88,7 @@ const Login = () => {
         <div className='w-[95%] flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
           <MdLockPerson className='text-black'/>
           <input 
-            type="password" 
+           type={pass_data? "password" : "text"} 
             name="password" 
             id="password" 
             placeholder='Password' 
@@ -92,6 +98,7 @@ const Login = () => {
             value={password} 
             onChange={(e) => setPassword(e.target.value)}
           />
+          <FaRegEye  className='cursor-pointer text-2xl' onClick={showPassword}/>
         </div>
         <button 
           type='submit' 

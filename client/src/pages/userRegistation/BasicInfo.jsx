@@ -1,20 +1,27 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { FaUser } from 'react-icons/fa';
+import { FaEye, FaUser } from 'react-icons/fa';
 import { MdLockPerson } from "react-icons/md";
 import { MdAlternateEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { FaRegEye } from "react-icons/fa";
 
 const BasicInfo = ({formData, setFormData})=>{
 
-    // const [username,setName] = useState("")
-    // const [email,setEmail] = useState("")
-    // const [password,setPassword] = useState("")
+    const [password_data,setPasswordData] = useState(false);
+    const [pass_data,setPassData] = useState(false);
+    const showPassword = ()=>{
+        setPasswordData(!password_data)
+    }
+    const showConfirmPassword = ()=>{
+        setPassData(!pass_data)
+    }
+
    
+
     return(
         <div className='bg-background h-fit pt-5 flex justify-center'>
             <Toaster />
@@ -29,12 +36,14 @@ const BasicInfo = ({formData, setFormData})=>{
                     <input type="email" name="email" id="email" placeholder='Email' className='py-2 bg-white bg-opacity-0 outline-none  text-black w-full'  autoComplete='off' autoSave='off' value={formData.email} onChange={(e)=>setFormData({...formData,email:e.target.value})}/>
                 </div>
                 <div className='flex px-[12px] py-[6px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
-                    <MdLockPerson className='text-black'/>
-                    <input type="password" name="password" id="password" placeholder='Password' className='py-2 bg-white bg-opacity-0 outline-none  text-black w-full'  autoComplete='off' autoSave='off' value={formData.password} onChange={(e)=>setFormData({...formData,password:e.target.value})}/>
+                    <MdLockPerson className='text-black text-xl'/>
+                    <input  type={password_data? "password" : "text"} name="password" id="password" placeholder='Password' className='py-2 bg-white bg-opacity-0 outline-none  text-black w-full'  autoComplete='off' autoSave='off' value={formData.password} onChange={(e)=>setFormData({...formData,password:e.target.value})}/>
+                    <FaRegEye  className='cursor-pointer text-2xl' onClick={showPassword}/>
                 </div>
                 <div className='flex px-[12px] py-[6px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
                     <MdLockPerson className='text-black'/>
-                    <input type="password" name="confirm_password" id="confirm_password" placeholder='Confirm Password' className='py-2 bg-white bg-opacity-0 outline-none  text-black w-full'  autoComplete='off' autoSave='off' value={formData.confirm_password} onChange={(e)=>setFormData({...formData,confirm_password:e.target.value})}/>
+                    <input type={pass_data? "password" : "text"} name="confirm_password" id="confirm_password" placeholder='Confirm Password' className='py-2 bg-white bg-opacity-0 outline-none  text-black w-full'  autoComplete='off' autoSave='off' value={formData.confirm_password} onChange={(e)=>setFormData({...formData,confirm_password:e.target.value})}/>
+                    <FaRegEye  className='cursor-pointer text-2xl' onClick={showConfirmPassword}/>
                 </div>
                 <div className="flex space-x-3 justify-center items-center">
                     <p className='text-black'>Already have an account</p>
@@ -46,12 +55,13 @@ const BasicInfo = ({formData, setFormData})=>{
 }
 
 BasicInfo.propTypes = {
-    formData:PropTypes.arrayOf(PropTypes.shape({
+    formData: PropTypes.shape({
         username: PropTypes.string,
         email: PropTypes.string,
         password: PropTypes.string,
         confirm_password: PropTypes.string
-    }))
+    }).isRequired,
+    setFormData: PropTypes.func.isRequired
 }
 
 export default BasicInfo

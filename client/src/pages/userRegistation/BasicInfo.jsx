@@ -7,15 +7,17 @@ import { MdLockPerson } from "react-icons/md";
 import { MdAlternateEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 const BasicInfo = ({formData, setFormData})=>{
 
-    const [name,setName] = useState("")
-    const [email,setEmail] = useState("")
-    const [password,setPassword] = useState("")
+    // const [username,setName] = useState("")
+    // const [email,setEmail] = useState("")
+    // const [password,setPassword] = useState("")
    
     return(
         <div className='bg-background h-fit pt-5 flex justify-center'>
+            <Toaster />
             <form className='w-[338px] h-fit rounded-[10px] flex flex-col space-y-6 shadow-2xl justify-center py-[24px] pt-[4px] px-[10px] max-sm:w-[300px]'>
                 <h1 className='text-hero text-2xl text-center font-medium'>Register Here</h1>
                 <div className='flex px-[12px] py-[6px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>

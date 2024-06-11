@@ -7,7 +7,9 @@ const registerController = async(req,res)=>{
         const password = req.body.password;
         const username = req.body.username;
         const email = req.body.email;
-        const confirmPassword = req.body.confirmPassword;
+        const confirmPassword = req.body.confirm_password;
+        const faceScan = req.body.faceScan;
+        const confirmRegister = req.body.confirmRegister;
 
         if (!username) {
             console.log("Username cannot be empty");
@@ -21,6 +23,7 @@ const registerController = async(req,res)=>{
             console.log("Password cannot be empty");
             return res.status(400).send({message:"Password cannot be empty"})
         }
+
         if (!confirmPassword) {
             console.log("Password confirmation cannot be empty");
             return res.status(400).send({message:"Password confirmation cannot be empty"})
@@ -40,6 +43,16 @@ const registerController = async(req,res)=>{
         if (password.length < 10) {
             console.log("Password is too short");
             return res.status(400).send({message:"Password is too short"})
+        }
+
+        if (!faceScan) {
+            console.log("Face scan not successful");
+            return res.status(400).send({message:"Face scan not successful"})
+        }
+
+        if (!confirmRegister) {
+            console.log("You must agree to our terms");
+            return res.status(400).send({message:"You must agree to our terms"})
         }
 
         // Bcrypt password

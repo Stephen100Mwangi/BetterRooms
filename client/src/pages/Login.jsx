@@ -36,10 +36,15 @@ const Login = () => {
     
     try {
       const response = await axios.post("http://localhost:6650/fetchUser", { email, password });
+      if (!response.ok) {
+        console.log("No response");
+      }else{
+        console.log("response found");
+      }
       const user = response.data.user;
 
       if(user){
-        dispatch(login({ email: user.email, id: user.id }));
+        dispatch(login({ email: user.email,username: user.username, id: user.id }));
         toast.success("Login Successful");
         setTimeout(() => {
           navigate("/profile");

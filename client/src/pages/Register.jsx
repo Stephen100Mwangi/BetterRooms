@@ -32,14 +32,15 @@ const Register = () => {
     }
   };
 
+
   // Register user
   const handleRegister = async () => {
     const username = formData.username;
     const email = formData.email;
     const password = formData.confirmRegistation;
     const confirm_password = formData.confirm_password;
-    const confirmRegistation = formData.confirmRegistation;
-    const faceScanSuccess = formData.faceScanSuccess;
+    const confirmRegister = formData.confirmRegister;
+    const faceScan = formData.faceScanSuccess;
 
     if (!username) {
       return toast.error("Username cannot be empty");
@@ -56,10 +57,10 @@ const Register = () => {
     if (password !== confirm_password) {
       return toast.error("Confirmation password must match password");
     }
-    if (!faceScanSuccess) {
+    if (!faceScan) {
       return toast.error("Face capture was not successful");
     }
-    if (!confirmRegistation) {
+    if (!confirmRegister) {
       return toast.error(
         "Please confirm that you want to create an account with us"
       );
@@ -71,8 +72,8 @@ const Register = () => {
         email,
         password,
         confirm_password,
-        confirmRegistation,
-        faceScanSuccess,
+        confirmRegister,
+        faceScan,
       });
 
       if (response.data.message === "Password is too short") {
@@ -94,6 +95,7 @@ const Register = () => {
         toast.success("User registered successfully");
         return navigate("/login");
       }
+
     } catch (error) {
       console.log("Error creating user");
       return toast.error("OOps! User registration failed.Please try again");

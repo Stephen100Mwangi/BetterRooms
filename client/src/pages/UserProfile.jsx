@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { logout } from '../features/users/UserSlice';
+import { logout, userSlice } from '../features/users/UserSlice';
 import { MdNightShelter, MdSearch } from "react-icons/md";
 import PersonalFeed from './PersonalFeed';
 import { FaAirbnb } from "react-icons/fa";
@@ -19,15 +19,19 @@ import { AiOutlineApartment } from "react-icons/ai";
 import { GiBunkBeds } from "react-icons/gi";
 import { GiDoorHandle } from "react-icons/gi";
 import { AiOutlineLogout } from "react-icons/ai";
+import { FaCommentSlash } from "react-icons/fa6";
 
 import Swal from 'sweetalert2';
 
 const UserProfile = () => {
     const [showBio,setShowBio] = useState(false);
+    const [showComment,setComment] = useState(false);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const icon= "../public/assets/quit.png"
+    const user = useSelector((state) => state.user.value);
+
+    console.log(user);
 
     const handleLogOut = async() => {
 
@@ -52,25 +56,29 @@ const UserProfile = () => {
         )
     }
     const addComment = async () => {
-        Swal.fire({
-            text: 'Leave your thoughts here',
-            confirmButtonColor:'#0E77F4',
-            showConfirmButton: true,
-            confirmButtonText: 'Add comment',
-            cancelButtonColor: '',
-            cancelButtonText: 'Not Now',
-            inputPlaceholder:'Start typing',
-            inputAutoFocus: true,
-            input: true,
-            icon: 'question',
-        })
-
+        setComment(!showComment);
     }
 
 
   return (
-    <div className='flex flex-col min-h-screen bg-background px-8'>
+    <div className='flex flex-col min-h-screen bg-background px-8 relative'>
         <Toaster></Toaster>
+
+        {
+            showComment && (
+            <div className='flex flex-col space-y-5 p-5 rounded-lg shadow-lg items-center absolute right-64 top-5 w-fit h-fit bg-white'>
+                <div className='relative w-full p-1 flex justify-end items-end text-red text-4xl cursor-pointer'onClick={()=>setComment(!showComment)}><FaCommentSlash  className='bg-white p-2 border border-hero rounded-full '/></div>
+                <input readOnly className='w-fit px-6 p-2 rounded-full text-black outline outline-1 outline-hero' type="text" value={user.username}/>
+                <input readOnly className='w-fit px-6 p-2 rounded-full text-black outline outline-1 outline-hero' type="text" name="" id="" value={user.email} />
+                <textarea name="" id="" cols="27" rows="5" className='bg-white text-black outline outline-1 outline-hero p-2 rounded-lg'></textarea>
+                <button className='rounded-full p-2 px-6 bg-hero text-white hover:bg-white hover:text-hero hover:outline outline-1'>Submit Comment</button>
+            </div>
+
+            )
+        }
+
+        
+        
         <div className="navbar -mt-5 mb-24">
             <div className="relative w-full flex justify-end items-end space-y-6 flex-col">
                 <div className=" absolute top-3 right-[4px] flex size-8 justify-center items-center rounded-full animate-ping border-hero border-2"></div>
@@ -82,12 +90,12 @@ const UserProfile = () => {
                 {
                     showBio && (
                         <div className="z-50 absolute bg-white top-10 right-0 personalBio shadow-base rounded-base p-4 flex flex-col space-y-4">
-                            <p className="font-bold text-base">Stephen Mwangi</p>
-                            <p className='font-light text-sm'>mwangiwahome70@gmail.com</p>
-                            <p className='font-mono text-sm'>+254758725032</p>
+                            <p className="font-bold text-base">{user.username}</p>
+                            <p className='font-light text-sm'>{user.email}</p>
+                            {/* <p className='font-mono text-sm'>+254758725032</p> */}
                             <p className='cursor-pointer text-red font-light text-sm'>Change Password</p>
-                            <button className='px-6 p-2 bg-hero text-background' onClick={addComment}>Leave a comment</button>
-                            <div onClick={handleLogOut} className="cursor-pointer flex items-center justify-center space-x-3 bg-red_500 py-2 text-white">
+                            <button className='px-6 p-2 bg-hero rounded-full text-background' onClick={addComment}>Leave a comment</button>
+                            <div onClick={handleLogOut} className="cursor-pointer rounded-full flex items-center justify-center space-x-3 bg-red_500 py-2 text-white">
                                <p>Sign Out</p>
                                <div><AiOutlineLogout /></div>
                             </div>

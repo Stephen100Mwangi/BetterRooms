@@ -6,7 +6,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 const ConfirmRegister = ({ formData, setFormData }) => {
-  const [confirmRegistation, setConfirm] = useState();
+  // const [confirmRegistation, setConfirm] = useState();
   return (
     <div className="bg-background h-fit pt-5 flex justify-center">
       <form className="w-[338px] h-fit rounded-[10px] flex flex-col space-y-6 shadow-2xl justify-center items-center py-[32px] px-[10px] max-sm:w-[300px]">
@@ -21,24 +21,13 @@ const ConfirmRegister = ({ formData, setFormData }) => {
         <p className="text-black font-light">
           I confirm that I am ready to create an account with Better Rooms
         </p>
-        <input
-          type="checkbox"
-          name="confirm"
-          id=""
-          value={formData.confirmRegistation}
-          onChange={() =>
-            setFormData({
-              ...formData,
-              confirmRegistation: !confirmRegistation,
-            })
-          }
-        />
+        <input type="checkbox" value={formData.confirmRegister} onChange={()=>{setFormData({...formData,confirmRegister: true})}}/>
       </form>
     </div>
   );
 };
 
-ConfirmRegister.PropTypes = {
+ConfirmRegister.propTypes = {
   formData: PropTypes.arrayOf(
     PropTypes.shape({
       confirmRegistation: PropTypes.bool,

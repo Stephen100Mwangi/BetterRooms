@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const Hero001 = () => {
-    const images = ["/assets/lights.jpg","/assets/kitchen.jpg","/assets/bed__.jpg","/assets/bed_.jpg","/assets/bed.jpg"]
+    const images = ["/assets/lights.jpg","/assets/kitchen.jpg","/assets/bed__.jpg","/assets/bed_.jpg"]
     const [random,setRandom] = useState(0);
     const [randomText,setRandomText] = useState(0);
 
@@ -11,7 +11,7 @@ const Hero001 = () => {
    
     useEffect(()=>{
         setInterval(() => {
-            const randomNumber = Math.floor(Math.random()* 5)
+            const randomNumber = Math.floor(Math.random()* 4)
             setRandom( randomNumber)
         }, 10000);
 

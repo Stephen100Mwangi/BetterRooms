@@ -6,6 +6,8 @@ import cors from 'cors'
 import mongoose from "mongoose";
 import registerRouter from "./server/routes/registerRoute.js";
 import loginRouter from "./server/routes/loginRoute.js";
+import forgotRouter from "./server/routes/forgotPasswordRoute.js";
+import resetRouter from "./server/routes/resetPasswordRoute.js";
 
 // Initialize app and middleware
 const app = express();
@@ -21,7 +23,7 @@ const CONNECTION_URL = process.env.MONGO_URL
 mongoose
     .connect(CONNECTION_URL)
     .then(()=>{
-        console.log("Connection to MongoDB was successful");
+        console.log("Connection to MongoDB was successful ");
 
         
         // Listen to PORT For communication
@@ -29,7 +31,7 @@ mongoose
             console.log(`Server running on port ${PORT}`);
 })
     }).catch(error =>{
-        console.log("An error ocurred while connecting to MongoDB");
+        console.log("An error ocurred while connecting to MongoDB"+ error);
     })
 
 // Routers
@@ -40,4 +42,6 @@ app.get('/',(req,res)=>{
 
 app.use(registerRouter);
 app.use(loginRouter);
+app.use(forgotRouter);
+app.use(resetRouter);
 

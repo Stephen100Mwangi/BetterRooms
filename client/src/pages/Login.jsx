@@ -102,11 +102,12 @@ const Login = () => {
         </div>
         <button 
           type='submit' 
-          className='bg-hero rounded-md text-white shadow-2xl py-3 w-[95%]' 
+          className='bg-hero rounded-sm text-white shadow-2xl py-3 px-8 w-[95%] hover:rounded-full' 
           disabled={loading}
         >
           {loading ? "Loading..." : "Login"}
         </button>
+        <Link to='/forgot_password' className='cursor-pointer text-red_500'>Forgot password</Link>
         <div className="flex flex-row justify-center items-center space-x-3 max-sm:flex-col">
           <p className='text-black'>Don&apos;t have an account?</p>
           <Link to='/register' className='text-hero'>Register Here</Link>

@@ -110,7 +110,7 @@ const Register = () => {
           <button
             onClick={() => setPage((currentPage) => currentPage - 1)}
             disabled={page == 0}
-            className="bg-hero rounded-md text-white shadow-2xl p-3 items-center flex justify-center px-6"
+            className="bg-hero rounded-sm hover:rounded-full text-white shadow-2xl px-8 p-3 items-center flex justify-center"
           >
             Previous
           </button>
@@ -122,7 +122,7 @@ const Register = () => {
                 setPage((currentPage) => currentPage + 1);
               }
             }}
-            className="bg-hero rounded-md text-white shadow-2xl p-3 items-center flex justify-center px-6"
+            className="bg-hero rounded-sm hover:rounded-full text-white shadow-2xl p-3 px-8 items-center flex justify-center"
           >
             {page === titles.length - 1 ? "Submit" : "Next"}
           </button>

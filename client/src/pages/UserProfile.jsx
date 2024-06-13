@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -71,7 +72,7 @@ const UserProfile = () => {
                 <input readOnly className='w-fit px-6 p-2 rounded-full text-black outline outline-1 outline-hero' type="text" value={user.username}/>
                 <input readOnly className='w-fit px-6 p-2 rounded-full text-black outline outline-1 outline-hero' type="text" name="" id="" value={user.email} />
                 <textarea name="" id="" cols="27" rows="5" className='bg-white text-black outline outline-1 outline-hero p-2 rounded-lg'></textarea>
-                <button className='rounded-full p-2 px-6 bg-hero text-white hover:bg-white hover:text-hero hover:outline outline-1'>Submit Comment</button>
+                <button className='rounded-sm p-2 px-6 bg-hero text-white hover:bg-white hover:text-hero hover:rounded-full hover:outline outline-1'>Submit Comment</button>
             </div>
 
             )
@@ -93,9 +94,9 @@ const UserProfile = () => {
                             <p className="font-bold text-base">{user.username}</p>
                             <p className='font-light text-sm'>{user.email}</p>
                             {/* <p className='font-mono text-sm'>+254758725032</p> */}
-                            <p className='cursor-pointer text-red font-light text-sm'>Change Password</p>
-                            <button className='px-6 p-2 bg-hero rounded-full text-background' onClick={addComment}>Leave a comment</button>
-                            <div onClick={handleLogOut} className="cursor-pointer rounded-full flex items-center justify-center space-x-3 bg-red_500 py-2 text-white">
+                            <Link to='/change_password' className='cursor-pointer text-red font-light text-sm'>Change Password</Link>
+                            <button className='px-6 p-2 bg-hero rounded-sm hover:rounded-full text-background' onClick={addComment}>Leave a comment</button>
+                            <div onClick={handleLogOut} className="cursor-pointer rounded-sm hover:rounded-full flex items-center justify-center space-x-3 bg-red_500 py-2 text-white">
                                <p>Sign Out</p>
                                <div><AiOutlineLogout /></div>
                             </div>

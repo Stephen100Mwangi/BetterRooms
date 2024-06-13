@@ -22,6 +22,8 @@ import ListingOutput from './components/ListingOutput'
 import UserListings from './pages/UserListings'
 import PageNotFound from './pages/PageNotFound'
 import Footer from './components/Footer'
+import ForgotPassword from './components/ForgotPassword'
+import ChangePassword from './components/ChangePassword'
 
 
 
@@ -43,6 +45,8 @@ const App = () => {
             <Route path='/chat' element={<Chatbot></Chatbot>}></Route>
             <Route path='/voiceBook' element={<BookVoice />}></Route>
             <Route path='/listing_output' element={<UserListings />}></Route>
+            <Route path="/forgot_password" element={<ForgotPassword />}></Route>
+            <Route path='/change_password' element={<ChangePassword />}></Route>
 
             {/* Protect Route to ensure user is logged in */}
             <Route path='' element={<ProtectedRoute />}>

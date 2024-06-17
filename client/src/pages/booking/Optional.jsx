@@ -1,71 +1,57 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef } from 'react'
-import { MdLockClock, MdMoney } from 'react-icons/md'
-import { FaIdCard } from "react-icons/fa";
+import React from 'react'
 import PropTypes from 'prop-types'
+import { FaMicrophoneLines } from "react-icons/fa6";
 
 
 // eslint-disable-next-line react/prop-types
 const Optional = ({formData,setData}) => {
-    const idRef = useRef(null);
-    const handleUploadClick = () => {
-        if (idRef.current) {
-          idRef.current.click();
-        }
-      };
   return (
     <form className='flex flex-col space-y-5 rounded-lg shadow-2xl p-6'>
         <h1 className='text-center text-2xl text-hero'>Optional Features</h1>
 
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Availability(Days per Year)">Minimum Availability(Days per Year)</label>
-            <input className='px-6 p-2 outline-hero' min={1} max={365} type="number" name="" value={formData.availability}  onChange={(e)=>setData({...formData,availability:e.target.value})} placeholder="0" />
+            <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
+                <input className='px-6 p-2 outline-hero min-w-56 mr-2' min={1} max={365} type="number" name="" value={formData.availability}  onChange={(e)=>setData({...formData,availability:e.target.value})} placeholder="0" />
+                <div className="cursor-pointer"><FaMicrophoneLines /></div>
+            </div>
         </div>
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Number of Reviews">Minimum Number of Reviews</label>
-            <input className='px-6 p-2 outline-hero' type="number" min={1} value={formData.minimumReviews}  onChange={(e)=>setData({...formData,minimumReviews:e.target.value})} placeholder="50" />
+            <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
+                <input className='px-6 p-2 outline-hero' type="number" min={1} value={formData.minimumReviews}  onChange={(e)=>setData({...formData,minimumReviews:e.target.value})} placeholder="50" />
+                <div className="cursor-pointer"><FaMicrophoneLines /></div>
+            </div>
         </div>
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Number of Beds">Minimum Number of Nights</label>
-            <input className='px-6 p-2 outline-hero' type="number" min={1} value={formData.minimumNights}  onChange={(e)=>setData({...formData,minimumNights:e.target.value})} placeholder="1" />
+            <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
+                <input className='px-6 p-2 outline-hero' type="number" min={1} value={formData.minimumNights}  onChange={(e)=>setData({...formData,minimumNights:e.target.value})} placeholder="1" />
+                <div className="cursor-pointer"><FaMicrophoneLines /></div>
+            </div>
         </div>
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Number of Beds">Minimum Rating</label>
-            <input className='px-6 p-2 outline-hero' type='range' step={0.1} min={1.0} max={5.0} value={formData.minimumRating}  onChange={(e)=>setData({...formData,minimumRating:e.target.value})} placeholder="2.0" />
+            <div className="flex items-center justify-between bg-white px-6 pl-2 p-0">
+                <input className='px-6 p-2 outline-hero' type='range' step={0.1} min={1.0} max={5.0} value={formData.minimumRating}  onChange={(e)=>setData({...formData,minimumRating:e.target.value})} placeholder="2.0" />
+                <div className="cursor-pointer"><FaMicrophoneLines /></div>
+            </div>
         </div>
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Number of Beds">Minimum Number of Beds</label>
-            <input className='px-6 p-2 outline-hero' min={1} max={10} type="number" value={formData.no_Beds}  onChange={(e)=>setData({...formData,no_Beds:e.target.value})} placeholder="0" />
+            <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
+                <input className='px-6 p-2 outline-hero' min={1} max={10} type="number" value={formData.no_Beds}  onChange={(e)=>setData({...formData,no_Beds:e.target.value})} placeholder="0" />
+                <div className="cursor-pointer"><FaMicrophoneLines /></div>
+            </div>
         </div>
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Number of Bedrooms">Minimum Number of Bedrooms</label>
-            <input className='px-6 p-2 outline-hero' min={1} max={10} type="number" value={formData.no_Bedrooms}  onChange={(e)=>setData({...formData,no_Bedrooms:e.target.value})} placeholder="0" />
+            <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
+                <input className='px-6 p-2 outline-hero' min={1} max={10} type="number" value={formData.no_Bedrooms}  onChange={(e)=>setData({...formData,no_Bedrooms:e.target.value})} placeholder="0" />
+                <div className="cursor-pointer"><FaMicrophoneLines /></div>
+            </div>
         </div>
-        {/* <MdLockClock className='text-black'/>
-            <select name="bookType" id="" className='bg-white text-black outline-none bg-opacity-0' >
-                <option value="timing" disabled>Time you wish to spend</option>
-                <option value="instantBook">Instant Book</option>
-                <option value="reservation">Reservation Request</option>
-            </select> */}
-        {/* <div className="flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal">
-            <MdMoney className='text-black'/>
-            <select name="bookType" id="" className='bg-white text-black outline-none bg-opacity-0' >
-                <option disabled className='bg-hero text-white'>Price per person</option>
-                <option value="$125">$125 (Small- Fits 2 adults)</option>
-                <option value="$60">$60 (Large- Fits 6 adults)</option>
-                <option value="$89">$89 (Hotel room fits 2 adults)</option>
-                <option value="instantBook"  disabled className='bg-hero text-white'>Price per night</option>
-                <option value="$314">$314 (1-night stay)</option>
-                <option value="$213">$213 (7-night stay)</option>
-                <option value="$169">$169 (30-night stay)</option>
-            </select>
-        </div> */}
-        {/* <div className="flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal">
-            <FaIdCard className='text-black' onClick={handleUploadClick}/>
-            <input ref={idRef} type="file" name="" id="" className='bg-white text-black outline-none bg-opacity-0' style={{ display: 'none', visibility:'hidden' }} placeholder='Time you wish to spend'/>
-            <input type="text" name="" id="" disabled className='bg-white text-black outline-none bg-opacity-0' placeholder="Upload your Country's ID card"/>
-        </div> */}
-      
     </form>
   )
 }

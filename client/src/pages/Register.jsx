@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
   const [page, setPage] = useState(0);
+  const [loading,setLoading] = useState(false);
+
   const titles = ["Register Here", "Scan Face", "Confirm Registration"];
 
   const [formData, setFormData] = useState({
@@ -36,6 +38,7 @@ const Register = () => {
   // Register user
   const handleRegister = async () => {
     const { username, email, password, confirm_password, confirmRegister, faceScanSuccess } = formData;
+    // setLoading(true)
 
     if (!username) {
       return toast.error("Username cannot be empty");
@@ -63,10 +66,11 @@ const Register = () => {
 
 
     try {
+      // setLoading(true)
       const response = await axios.post("http://localhost:6650/createUser", {username,email,password,confirm_password,confirmRegister,faceScanSuccess});
 
       console.log("Response from server:", response);
-
+      setLoading(false);
       if (response.data.message === "Password is too short") {
         toast.error("Password is too short");
       }
@@ -84,18 +88,24 @@ const Register = () => {
         toast.error("Please type a valid email");
       }
 
+      if(response.data.message === "User already exists") {
+        toast.error("User account already exists");
+      }
+
       if (response.data.message === "User registered successfully") {
         toast.success("User registered successfully");
         return navigate("/login");
       }
+      
 
     } catch (error) {
-      console.log("Error creating user"+  error.response ? error.response.data : error.message);
+      setLoading(false)
+      console.log("Error creating user"+  error);
       return toast.error("Oops! User registration failed.Please try again");
     }
   };
   return (
-    <div className="min-h-[calc(100vh-120px)] flex flex-col justify-center items-center bg-background relative max-sm:overflow-hidden">
+    <div className="min-h-[calc(100vh-120px)] pb-20 flex flex-col justify-center items-center bg-background relative max-sm:overflow-hidden">
       <div className="w-[120px] items-start justify-start p-0 bg-white rounded-full fixed top-28 max-md:invisible">
         <div
           className="progressbar rounded-full h-1 bg-hero"
@@ -103,7 +113,7 @@ const Register = () => {
         ></div>
       </div>
       <Toaster />
-
+      {loading && (toast.loading("Loading.Please wait"))}
       <div className="formContainer flex flex-col space-y-5">
         <div className="body">{pageDisplay()}</div>
         <div className="flex space-x-5 justify-center">

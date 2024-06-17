@@ -69,30 +69,30 @@ const Login = () => {
   return (
     <div className='bg-background h-[calc(100vh-120px)] flex justify-center pt-5'>
       <Toaster />
-      <form onSubmit={handleSubmit} className='w-[338px] h-fit rounded-[10px] flex flex-col space-y-6 shadow-2xl justify-center items-center py-[24px] px-[10px] max-sm:w-[300px]'>
-        <h1 className='text-hero text-2xl text-center font-medium'>Login Here</h1>
-        <div className='w-[95%] flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
+      <form onSubmit={handleSubmit} className='w-[338px] max-md:w-[300px] h-fit rounded-[10px] flex flex-col space-y-6 max-md:space-y-5 shadow-2xl justify-center items-center py-[24px] px-[10px] max-sm:w-[300px]'>
+        <h1 className='text-hero text-2xl text-center font-medium max-md:text-xl'>Login Here</h1>
+        <div className='w-[95%] flex px-[12px] py-[8px] space-x-[16px] bg-white items-center justify-normal'>
           <MdAlternateEmail className='text-black'/>
           <input 
             type="text" 
             name="email" 
             id="email" 
             placeholder='Email' 
-            className='bg-white bg-opacity-0 outline-none text-black w-full py-2' 
+            className='bg-white bg-opacity-0 outline-none text-black w-full p-2 max-md:p-1' 
             autoComplete='off' 
             autoSave='off' 
             value={email} 
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className='w-[95%] flex px-[12px] py-[8px] space-x-[16px] rounded-xl bg-white items-center justify-normal'>
+        <div className='w-[95%] flex px-[12px] py-[8px] space-x-[16px] bg-white items-center justify-normal'>
           <MdLockPerson className='text-black'/>
           <input 
            type={pass_data? "password" : "text"} 
             name="password" 
             id="password" 
             placeholder='Password' 
-            className='bg-white bg-opacity-0 outline-none text-black w-full p-2' 
+            className='bg-white bg-opacity-0 outline-none text-black w-full p-2 max-md:p-1' 
             autoComplete='off' 
             autoSave='off' 
             value={password} 
@@ -102,7 +102,7 @@ const Login = () => {
         </div>
         <button 
           type='submit' 
-          className='bg-hero rounded-sm text-white shadow-2xl py-3 px-8 w-[95%] hover:rounded-full' 
+          className='bg-hero rounded-sm text-white shadow-2xl py-3 max-md:py-2 px-8 w-[95%] hover:rounded-full' 
           disabled={loading}
         >
           {loading ? "Loading..." : "Login"}

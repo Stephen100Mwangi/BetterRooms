@@ -10,7 +10,7 @@ const ListingOutput = ({image,price,reviews,rate,name,location,like,favorite,sta
         </div>
         <div className='flex justify-between items-center'>
             <div className="flex items-center justify-center">
-                <h1 className='text-lg font-medium'>{name}</h1>
+                <h1 className='text-lg font-medium max-md:text-base'>{name}</h1>
             </div>
             <div className="flex justify-center items-center space-x-3">
                 <div className='text-black cursor-pointer'>{like}</div>
@@ -22,7 +22,7 @@ const ListingOutput = ({image,price,reviews,rate,name,location,like,favorite,sta
             <h1 className='text-heroTitle text-sm'>{location}</h1>
         </div>
         <div className="flex space-x-5 items-center justify-start">
-            <h1 className='text-hero text-base'>{rate}</h1>
+            <h1 className='text-hero text-base max-md:text-sm'>{rate}</h1>
             <div className='text-heroTitle flex justify-center text-sm items-center space-x-2'>
                 <div>{stars}</div>
                 <div>{stars}</div>
@@ -33,11 +33,11 @@ const ListingOutput = ({image,price,reviews,rate,name,location,like,favorite,sta
         </div>
 
         <div>
-            <h1 className='text-hero font-normal'>{reviews} reviews</h1>
+            <h1 className='text-hero font-normal max-md:text-sm'>{reviews} reviews</h1>
         </div>
 
         <div>
-            <h1 className='text-heroTitle font-normal text-base'>${price} per night</h1>
+            <h1 className='text-heroTitle font-normal text-base max-md:text-sm'>${price} per night</h1>
         </div>
     </div>
   )
@@ -46,7 +46,7 @@ const ListingOutput = ({image,price,reviews,rate,name,location,like,favorite,sta
 ListingOutput.propTypes = {
     price: PropTypes.number.isRequired,
     reviews: PropTypes.number.isRequired,
-    image: PropTypes.element.isRequired,
+    image: PropTypes.elementType.isRequired,
     rate: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,

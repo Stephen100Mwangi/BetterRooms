@@ -10,7 +10,7 @@ const Testimonials = () => {
   return (
     <div className='py-2 pt-0 max-md:p-5 min-h-[calc(100vh-120px)] bg-background p-[20px] h-fit max-md:h-fit'>
 
-      <h1 className='text-center text-3xl text-black mb-10 font-bold'>Don't Just Take Our Word For It: <span className='text-hero'>Guest Testimonials</span> </h1>
+      <h1 className='text-center text-3xl text-black mb-10 font-bold max-md:text-2xl'>Don't Just Take Our Word For It: <span className='text-hero'>Guest Testimonials</span> </h1>
 
       <div className="bg-[url('/assets/blue.jpg')] bg-cover bg-center bg-no-repeat rounded-lg shadow-2xl w-full overflow-auto scrollbar-hide p-6 h-[calc(65vh)] flex flex-wrap justify-center items-center gap-16 max-md:p-4 max-md:flex max-md:overflow-x-scroll">
         <div className="shadow-2xl flex flex-col space-y-8 justify-center items-center w-[300px] min-w-[300px] min-h-[350px] p-4 rounded-lg border-none bg-background relative">

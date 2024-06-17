@@ -11,8 +11,10 @@ import resetRouter from "./server/routes/resetPasswordRoute.js";
 
 // Initialize app and middleware
 const app = express();
+
 app.use(cors());
 app.use(express.json());
+
 
 // Configure dotenv
 dotenv.config();

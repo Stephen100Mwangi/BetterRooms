@@ -32,7 +32,7 @@ const ForgotPassword = () => {
   return (
     <div className='flex flex-col space-y-16 justify-start pt-8 items-center h-screen'>
         <div>
-            <img src="./public/assets/forgot.png" alt=""  className='w-64'/>
+            <img src="/assets/forgot.png" alt=""  className='w-64'/>
         </div>
         <Toaster />
         <div className='flex flex-col space-y-8 p-4 shadow-2xl rounded-sm'>

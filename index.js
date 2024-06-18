@@ -8,6 +8,7 @@ import registerRouter from "./server/routes/registerRoute.js";
 import loginRouter from "./server/routes/loginRoute.js";
 import forgotRouter from "./server/routes/forgotPasswordRoute.js";
 import resetRouter from "./server/routes/resetPasswordRoute.js";
+import commentRouter from "./server/routes/CommentRouter.js";
 
 // Initialize app and middleware
 const app = express();
@@ -46,4 +47,5 @@ app.use(registerRouter);
 app.use(loginRouter);
 app.use(forgotRouter);
 app.use(resetRouter);
+app.use(commentRouter);
 

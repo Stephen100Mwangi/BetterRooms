@@ -6,7 +6,7 @@ const ChangePassword = () => {
   return (
     <div className='flex flex-col space-y-16 justify-start pt-8 items-center h-screen'>
         <div>
-            <img src="./public/assets/password.png" alt=""  className='w-64'/>
+            <img src="/assets/password.png" alt=""  className='w-64'/>
         </div>
         <div className='flex flex-col space-y-8 p-4 shadow-2xl rounded-sm'>
             <div className='flex flex-col space-y-3'>

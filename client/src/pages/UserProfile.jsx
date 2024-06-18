@@ -2,6 +2,7 @@
 import React, { useContext, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -60,6 +61,16 @@ const UserProfile = () => {
         setComment(!showComment);
     }
 
+    const sendComment = async(req,res)=>{
+        try {
+            const {name,email,message} = req.body;
+            const response = await axios.post("http://localhost:6650/addComment",{name,email,message});
+
+        } catch (error) {
+            console.log("Error sending message");
+        }
+    }
+
 
   return (
     <div className='flex flex-col min-h-screen bg-background px-8 relative'>
@@ -72,7 +83,7 @@ const UserProfile = () => {
                 <input readOnly className='w-fit px-6 p-2 rounded-full text-black outline outline-1 outline-hero' type="text" value={user.username}/>
                 <input readOnly className='w-fit px-6 p-2 rounded-full text-black outline outline-1 outline-hero' type="text" name="" id="" value={user.email} />
                 <textarea name="" id="" cols="27" rows="5" className='bg-white text-black outline outline-1 outline-hero p-2 rounded-lg'></textarea>
-                <button className='rounded-sm p-2 px-6 bg-hero text-white hover:bg-white hover:text-hero hover:rounded-full hover:outline outline-1'>Submit Comment</button>
+                <button className='rounded-sm p-2 px-6 bg-hero text-white hover:bg-white hover:text-hero hover:rounded-full hover:outline outline-1' onClick={sendComment}>Submit Comment</button>
             </div>
 
             )

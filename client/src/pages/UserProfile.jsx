@@ -33,7 +33,9 @@ const UserProfile = () => {
     const navigate = useNavigate();
     const user = useSelector((state) => state.user.value);
 
-    console.log(user);
+    const [message,setMessage] = useState('');
+
+    // console.log(user);
 
     const handleLogOut = async() => {
 
@@ -61,13 +63,34 @@ const UserProfile = () => {
         setComment(!showComment);
     }
 
-    const sendComment = async(req,res)=>{
+    const sendComment = async(e)=>{
+        e.preventDefault();
+        const name = user.username;
+        const email = user.email
+        if (!name) {
+            return toast.error("Name cannot be empty");
+        }
+        if (!email) {
+            return toast.error("Email cannot be empty")
+        }
+        if (!message) {
+            return toast.error("Message cannot be empty")
+        }
         try {
-            const {name,email,message} = req.body;
-            const response = await axios.post("http://localhost:6650/addComment",{name,email,message});
+           
+            const response = await axios.post("http://localhost:6650/addComment",{ name,email,message });
+            if (response.data.message === "Message cannot be empty"){
+                return toast.error("Message cannot be empty")
+            }
+
+            if (response.data.message === "Comment created successfully") {
+                setMessage("");
+                return toast.success("Kudos. You just projected your voice.We value your feedback.")
+            }
 
         } catch (error) {
             console.log("Error sending message");
+            return toast.error("Error sending message")
         }
     }
 
@@ -82,7 +105,7 @@ const UserProfile = () => {
                 <div className='relative w-full p-1 flex justify-end items-end text-red text-4xl cursor-pointer'onClick={()=>setComment(!showComment)}><FaCommentSlash  className='bg-white p-2 border border-hero rounded-full '/></div>
                 <input readOnly className='w-fit px-6 p-2 rounded-full text-black outline outline-1 outline-hero' type="text" value={user.username}/>
                 <input readOnly className='w-fit px-6 p-2 rounded-full text-black outline outline-1 outline-hero' type="text" name="" id="" value={user.email} />
-                <textarea name="" id="" cols="27" rows="5" className='bg-white text-black outline outline-1 outline-hero p-2 rounded-lg'></textarea>
+                <textarea name="message" id="" cols="27" rows="5" className='bg-white text-black outline outline-1 outline-hero p-2 rounded-lg' value={message} onChange={(e)=>setMessage(e.target.value)}></textarea>
                 <button className='rounded-sm p-2 px-6 bg-hero text-white hover:bg-white hover:text-hero hover:rounded-full hover:outline outline-1' onClick={sendComment}>Submit Comment</button>
             </div>
 

@@ -8,12 +8,12 @@ import { FaMicrophoneLines } from "react-icons/fa6";
 const Optional = ({formData,setData}) => {
   return (
     <form className='flex flex-col space-y-5 rounded-lg shadow-2xl p-6'>
-        <h1 className='text-center text-2xl text-hero'>Optional Features</h1>
+        <h1 className='text-center text-2xl text-hero'>Other Features</h1>
 
         <div className="flex flex-col space-y-4 px-[12px] py-[8px]">
             <label className='font-bold text-base' htmlFor="Minimum Availability(Days per Year)">Minimum Availability(Days per Year)</label>
             <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
-                <input className='px-6 p-2 outline-hero min-w-56 mr-2' min={1} max={365} type="number" name="" value={formData.availability}  onChange={(e)=>setData({...formData,availability:e.target.value})} placeholder="0" />
+                <input className='px-6 p-2 outline-hero min-w-56 mr-2' min={1} max={365} type="number" name="" value={formData.annual_availability}  onChange={(e)=>setData({...formData,annual_availability:e.target.value})} placeholder="0" />
                 <div className="cursor-pointer"><FaMicrophoneLines /></div>
             </div>
         </div>

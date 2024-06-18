@@ -15,31 +15,31 @@ const Payment = ({formData,setData}) => {
         </div>
         <div className="flex flex-col space-y-3">
             <div className="flex space-x-3">
-                <input type="radio" name="creditCard" id="" value={formData.payment} onChange={(e)=>setData({...formData,payment:e.target.value})} />
+                <input type="radio" name="creditCard" id="" value="creditCard" onChange={(e)=>setData({...formData,payment:e.target.value})} />
                 <span className='text-black'>Credit card</span>
             </div>
             <div className="flex space-x-3">
-                <input type="radio" name="debitCard" id="" value={formData.payment} onChange={(e)=>setData({...formData,payment:e.target.value})} />
+                <input type="radio" name="debitCard" id="" value="debitCard" onChange={(e)=>setData({...formData,payment:e.target.value})} />
                 <span className='text-black'>Debit card</span>
             </div>
             <div className="flex space-x-3">
-                <input type="radio" name="bank" id="" value={formData.payment} onChange={(e)=>setData({...formData,payment:e.target.value})} />
+                <input type="radio" name="bank" id="" value="bank" onChange={(e)=>setData({...formData,payment:e.target.value})} />
                 <span className='text-black'>Bank Account card</span>
             </div>
             <div className="flex space-x-3">
-                <input type="radio" name="paypal" id="" value={formData.payment} onChange={(e)=>setData({...formData,payment:e.target.value})} />
+                <input type="radio" name="paypal" id="" value="paypal" onChange={(e)=>setData({...formData,payment:e.target.value})} />
                 <span className='text-black'>Paypal</span>
             </div>
             <div className="flex space-x-3">
-                <input type="radio" name="googlePay" id="" value={formData.payment} onChange={(e)=>setData({...formData,payment:e.target.value})} />
+                <input type="radio" name="googlePay" id="" value="googlePay" onChange={(e)=>setData({...formData,payment:e.target.value})} />
                 <span className='text-black'>Google Pay</span>
             </div>
             <div className="flex space-x-3">
-                <input type="radio" name="applePay" id="" value={formData.payment} onChange={(e)=>setData({...formData,payment:e.target.value})} />
+                <input type="radio" name="applePay" id="" value="applePay" onChange={(e)=>setData({...formData,payment:e.target.value})} />
                 <span className='text-black'>Apple Pay</span>
             </div>
             <div className="flex space-x-3">
-                <input type="radio" name="airCredits" id="" value={formData.payment} onChange={(e)=>setData({...formData,payment:e.target.value})} />
+                <input type="radio" name="airCredits" id="" value="airCredits" onChange={(e)=>setData({...formData,payment:e.target.value})} />
                 <span className='text-black'>AirBNB Credits</span>
             </div>
         </div>

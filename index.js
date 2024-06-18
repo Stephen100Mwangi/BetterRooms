@@ -10,6 +10,7 @@ import forgotRouter from "./server/routes/forgotPasswordRoute.js";
 import resetRouter from "./server/routes/resetPasswordRoute.js";
 import commentRouter from "./server/routes/CommentRouter.js";
 import FetchCommentsRoute from "./server/routes/fetchCommentRouter.js";
+import bookRouter from "./server/routes/bookHotelRouter.js";
 
 // Initialize app and middleware
 const app = express();
@@ -50,4 +51,5 @@ app.use(forgotRouter);
 app.use(resetRouter);
 app.use(commentRouter);
 app.use(FetchCommentsRoute);
+app.use(bookRouter);
 

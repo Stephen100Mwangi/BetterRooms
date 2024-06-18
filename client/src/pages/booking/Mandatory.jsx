@@ -66,9 +66,9 @@ const Mandatory = ({ formData, setData }) => {
             onChange={(e) => setData({ ...formData, roomType: e.target.value })}
           >
             <option value="Entire Home">Entire Home</option>
-            <option value="Entire Home">Private room</option>
-            <option value="Entire Home">Shared room</option>
-            <option value="Entire Home">Hotel room</option>
+            <option value="Private room">Private room</option>
+            <option value="Shared room">Shared room</option>
+            <option value="Hotel room">Hotel room</option>
           </select>
           <div className="cursor-pointer"><FaMicrophoneLines /></div>
         </div>
@@ -88,7 +88,7 @@ const Mandatory = ({ formData, setData }) => {
       <div className="flex flex-col space-y-2 px-[12px] py-[8px]">
         <label className='font-bold text-base' htmlFor="Price Range">Price Range</label>
         <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
-          <input min={10} max={1000} step={10} className='px-6 p-2 outline-hero min-w-56 mr-2' type="number" name="" value={formData.minimumReviews}  onChange={(e)=>setData({...formData,minimumReviews:e.target.value})} placeholder="Minimum Number of Reviews" />
+          <input min={10} max={1000} step={10} className='px-6 p-2 outline-hero min-w-56 mr-2' type="number" name="" value={formData.priceRange}  onChange={(e)=>setData({...formData,priceRange:e.target.value})} placeholder="Minimum price range" />
           <div className="cursor-pointer"><FaMicrophoneLines /></div>
         </div>
       </div>
@@ -106,7 +106,7 @@ Mandatory.propTypes = {
       propertyType:PropTypes.string,
       priceRange:PropTypes.string,
       minimumReviews:PropTypes.number,
-      availability:PropTypes.number,
+      annual_availability:PropTypes.number,
       minimumRating:PropTypes.number,
       minimumNights:PropTypes.number,
       no_Beds:PropTypes.number,

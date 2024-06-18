@@ -1,12 +1,23 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useContext } from 'react'
 import ListingOutput from '../components/ListingOutput'
 import { FaHeart, FaStar, FaThumbsUp } from 'react-icons/fa6'
 import { IoReturnUpBack } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import { UserListingsContext } from './booking/BookText';
 
 const UserListings = () => {
     const navigate = useNavigate();
+
+    // This is the data that was filled in by the user
+
+    // NOTE.....
+    const FORMDATA = useContext(UserListingsContext);
+    console.log(FORMDATA);
+
+
+
+
   return (
     <div className='flex flex-col space-y-10 px-8 bg-background min-h-screen'>
         <div className="title">

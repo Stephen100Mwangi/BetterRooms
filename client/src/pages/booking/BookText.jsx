@@ -23,7 +23,9 @@ const BookText = () => {
         neighborhood:"",
         roomType:"",
         propertyType:"",
-        priceRange:"",
+        // priceRange:"",
+        min_priceRange: 0,
+        max_priceRange: 0,
         minimumReviews:0,
         annual_availability:0,
         minimumRating:1.0,
@@ -52,7 +54,9 @@ const BookText = () => {
             neighborhood,
             roomType,
             propertyType,
-            priceRange,
+            // priceRange,
+            min_priceRange,
+            max_priceRange,
             // payment,
             minimumReviews,
             annual_availability,
@@ -63,8 +67,12 @@ const BookText = () => {
     
         }  = formData;
     
-        if (!city || !neighborhood || !roomType || !priceRange || !propertyType || !minimumNights || !minimumRating || !minimumReviews || !annual_availability || !no_Bedrooms || !no_Beds) {
+        if (!city || !neighborhood || !roomType || ! min_priceRange || !max_priceRange || !propertyType || !minimumNights || !minimumRating || !minimumReviews || !annual_availability || !no_Bedrooms || !no_Beds) {
             return toast.error("All fields must me completed")
+        }
+
+        if (annual_availability > 365) {
+            return toast.error("Annual availability cannot exceed 365")
         }
 
         setUserRequestedData(formData);

@@ -32,26 +32,24 @@ const Mandatory = ({ formData, setData }) => {
             <option value="London">London</option>
             <option value="Brussels">Brussels</option>
           </select>
-          <div className="cursor-pointer"><FaMicrophoneLines /></div>
+          {/* <div className="cursor-pointer"><FaMicrophoneLines /></div> */}
         </div>
       </div>
 
       <div className="flex flex-col space-y-2 px-[12px] py-[8px]">
         <label className="font-bold text-base" htmlFor="Available places">Available places</label>
         <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
-          <select
+          <input
             name=""
+            type='text'
             id=""
             className="px-6 p-2 outline-hero min-w-56 mr-2"
             value={formData.neighborhood}
             onChange={(e) =>
               setData({ ...formData, neighborhood: e.target.value })
             }
-          >
-            <option value="Villa parks">Villa parks</option>
-            <option value="Vipingo Gardens">Vipingo Gardens</option>
-          </select>
-          <div className="cursor-pointer"><FaMicrophoneLines /></div>
+          ></input>
+          {/* <div className="cursor-pointer"><FaMicrophoneLines /></div> */}
         </div>
       </div>
 
@@ -70,7 +68,7 @@ const Mandatory = ({ formData, setData }) => {
             <option value="Shared room">Shared room</option>
             <option value="Hotel room">Hotel room</option>
           </select>
-          <div className="cursor-pointer"><FaMicrophoneLines /></div>
+          {/* <div className="cursor-pointer"><FaMicrophoneLines /></div> */}
         </div>
       </div>
 
@@ -82,14 +80,41 @@ const Mandatory = ({ formData, setData }) => {
             <option value="House">House</option>
             <option value="Condo">Condo</option>
           </select>
-          <div className="cursor-pointer"><FaMicrophoneLines /></div>
+          {/* <div className="cursor-pointer"><FaMicrophoneLines /></div> */}
         </div>
       </div>
       <div className="flex flex-col space-y-2 px-[12px] py-[8px]">
-        <label className='font-bold text-base' htmlFor="Price Range">Price Range</label>
+        <label className='font-bold text-base' htmlFor="Price Range">Minimum Price Range</label>
         <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
-          <input min={10} max={1000} step={10} className='px-6 p-2 outline-hero min-w-56 mr-2' type="number" name="" value={formData.priceRange}  onChange={(e)=>setData({...formData,priceRange:e.target.value})} placeholder="Minimum price range" />
-          <div className="cursor-pointer"><FaMicrophoneLines /></div>
+          <input
+              min={10}
+              type="range"
+              max={formData.max_priceRange}
+              step={10}
+              className='px-6 p-2 outline-hero min-w-56 mr-2'
+              name="max_priceRange"
+              value={formData.min_priceRange}
+              onChange={(e)=>setData({...formData,min_priceRange:e.target.value})}
+              placeholder="Minimum price range" />
+            <span className="ml-4">{formData.min_priceRange}</span>
+          {/* <div className="cursor-pointer"><FaMicrophoneLines /></div> */}
+        </div>
+      </div>
+      <div className="flex flex-col space-y-2 px-[12px] py-[8px]">
+        <label className='font-bold text-base' htmlFor="Price Range">Maximum Price Range</label>
+        <div className="flex items-center justify-between bg-white px-6 pl-0 p-0">
+          <input
+              min={formData.min_priceRange}
+              max={1000}
+              step={10}
+              className='px-6 p-2 outline-hero min-w-56 mr-2'
+              type="range"
+              name="max_priceRange"
+              value={formData.max_priceRange}
+              onChange={(e)=>setData({...formData,max_priceRange:e.target.value})}
+              placeholder="Minimum price range" />
+            <span className="ml-4">{formData.max_priceRange}</span>
+          {/* <div className="cursor-pointer"><FaMicrophoneLines /></div> */}
         </div>
       </div>
 
@@ -104,7 +129,9 @@ Mandatory.propTypes = {
       neighborhood:PropTypes.string,
       roomType:PropTypes.string,
       propertyType:PropTypes.string,
-      priceRange:PropTypes.string,
+      // priceRange:PropTypes.string,
+      min_priceRange: PropTypes.number,
+      max_priceRange: PropTypes.number,
       minimumReviews:PropTypes.number,
       annual_availability:PropTypes.number,
       minimumRating:PropTypes.number,

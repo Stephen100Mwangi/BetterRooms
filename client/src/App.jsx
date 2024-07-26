@@ -12,7 +12,7 @@ import Chatbot from './components/Chatbot'
 import Hero001 from './components/Hero001'
 import Hero002 from './components/Hero002'
 import Hero003 from './components/Hero003'
-import BookVoice from './pages/booking/BookVoice'
+// import BookVoice from './pages/booking/BookVoice'
 import Booking from './pages/booking/Booking'
 import BookText from './pages/booking/BookText'
 import BookResult from './pages/booking/BookResult'
@@ -43,7 +43,6 @@ const App = () => {
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/register' element={<Register></Register>}></Route>
             <Route path='/chat' element={<Chatbot></Chatbot>}></Route>
-            <Route path='/voiceBook' element={<BookVoice />}></Route>
             <Route path='/listing_output' element={<UserListings />}></Route>
             <Route path="/forgot_password" element={<ForgotPassword />}></Route>
             <Route path='/change_password' element={<ChangePassword />}></Route>

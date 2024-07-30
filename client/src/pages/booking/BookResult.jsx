@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
-import defaultImage from '/BetterRooms/client/public/defaultBNB.jpg'
 
 const Recommendations = () => {
   useEffect(() => {
@@ -103,7 +102,6 @@ const Recommendations = () => {
       >
         Listen to Recommendations
       </button>
-      <img src={defaultImage} alt="" />
       <div id="recommendations" className="w-full justify-center items-center grid grid-cols-3 gap-4 max-xl:grid-cols-2 max-md:grid-cols-1">
         {/* Recommendations will be appended here */}
       </div>

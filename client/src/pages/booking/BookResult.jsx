@@ -25,8 +25,8 @@ const Recommendations = () => {
           <p class="text-gray-600 roboto">Instant Bookable: ${rec.instant_bookable === 't' ? 'true' : 'false'}</p>
           <a href="${rec.listing_url}" target="_blank" class="text-blue-500 underline">View Listing</a>
           <br><br>
-          <div class="w-[90%] h-60 rounded-md mt-5 flex items-center justify-center overflow-clip">
-          <img src="${rec.picture_url}" className="w-[100%] h-[100%] rounded-md object-cover" alt="Listing Image">
+          <div class="w-[90%] h-60 rounded-lg mt-5 flex items-center justify-center overflow-clip">
+          <img src="${rec.picture_url}" className="w-[100%] h-[100%] rounded-lg object-cover" alt="Listing Image">
           </div>
           <div class="flex w-full justify-between">
 

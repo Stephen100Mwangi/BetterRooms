@@ -32,12 +32,7 @@ To get this project running we will incorporate a number of steps
 7. Input all the details in the form provided and then press the submit button. Incase your entry data did not match any attributes of an airbnb as per Kaggle databases, you 
    will have to use Content Based Filtering algorithm. This is to supplement K-Nearest Neighbour algorithm, which is launched first.
 8. Woohoo! There is your next airbnb. You can then navigate to desired airbnb and place a booking.
-    {
-      "email":"mwangi70@gmail.com",
-      "password":"12qweas@qwQ"
-    }
-
-
+   
    ### Backend
    1. Assuming you are on the root directory of this project - If not create a new terminal to launch new root directory
    2. Navigate to the server. Use the command `cd server`

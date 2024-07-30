@@ -12,18 +12,15 @@ import Chatbot from './components/Chatbot'
 import Hero001 from './components/Hero001'
 import Hero002 from './components/Hero002'
 import Hero003 from './components/Hero003'
-// import BookVoice from './pages/booking/BookVoice'
-import Booking from './pages/booking/Booking'
-import BookText from './pages/booking/BookText'
-import BookResult from './pages/booking/BookResult'
 import ProtectedRoute from './components/ProtectedRoute'
 import UserProfile from './pages/UserProfile'
 import ListingOutput from './components/ListingOutput'
-import UserListings from './pages/UserListings'
 import PageNotFound from './pages/PageNotFound'
 import Footer from './components/Footer'
 import ForgotPassword from './components/ForgotPassword'
 import ChangePassword from './components/ChangePassword'
+import AirbnbRecommender from './pages/booking/BookEntry'
+import Recommendations from './pages/booking/BookResult'
 
 
 
@@ -43,15 +40,14 @@ const App = () => {
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/register' element={<Register></Register>}></Route>
             <Route path='/chat' element={<Chatbot></Chatbot>}></Route>
-            <Route path='/listing_output' element={<UserListings />}></Route>
             <Route path="/forgot_password" element={<ForgotPassword />}></Route>
             <Route path='/change_password' element={<ChangePassword />}></Route>
 
+
             {/* Protect Route to ensure user is logged in */}
             <Route path='' element={<ProtectedRoute />}>
-              <Route path='/bookText' element={<BookText />}></Route>
-              <Route path='/bookResult' element={<BookResult />}></Route>
-              <Route path='/book' element={<Booking />}></Route>
+              <Route path='/bookAIRBNB' element={<AirbnbRecommender />}></Route>
+              <Route path='/recommendations' element={<Recommendations />}></Route>
               <Route path='/profile' element={<UserProfile />}></Route>
             </Route>
 

@@ -20,7 +20,7 @@ const Navbar = () => {
             <Link to='/about'>About Us</Link>
             <Link to='/listings'>Our Listings</Link>
             <Link to='/testimonials'>Testimonials</Link>
-            <Link to='/book'>Book Accommodation</Link>
+            <Link to='/bookAIRBNB'>Book Accommodation</Link>
             {
               userLoggedIn &&  <Link to='/profile' className='text-red'>Sign Out</Link>
             }
@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link to='/about'>About Us</Link>
             <Link to='/listings'>Our Listings</Link>
             <Link to='/testimonials'>Testimonials</Link>
-            <Link to='/book'>Book Accommodation</Link>
+            <Link to='/bookAIRBNB'>Book Accommodation</Link>
             {
               userLoggedIn &&  <Link to='/profile' className='text-red'>Sign Out</Link>
             }

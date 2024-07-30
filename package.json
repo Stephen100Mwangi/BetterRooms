@@ -38,6 +38,7 @@
     "nodemailer": "^6.9.14",
     "nodemon": "^3.1.2",
     "openai": "^4.51.0",
+    "pandas": "^0.0.3",
     "postcss-nested": "^6.0.1",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",

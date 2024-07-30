@@ -1,9 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import { useEffect } from 'react'
 import { FaStar, FaHeart, FaThumbsUp } from 'react-icons/fa6'
 import ListingOutput from '../components/ListingOutput'
 
 const Listings = () => {
+  useEffect(()=>{
+    fetch('http://127.0.0.1:5000/recommend?limit=20')
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'no_results_knn') {
+          // setShowCBFPrompt(true);
+          console.log("No knn");
+        } else {
+          // setAirbnbs(data.recommendations);
+          console.log(data);
+        }
+      })
+      .catch(error => console.error('Error:', error));
+
+  },[])
   return (
     <div className='min-h-[calc(100vh-120px)] bg-background p-[20px]'>
       <div className="flex flex-col space-y-3 m-5 mx-auto">

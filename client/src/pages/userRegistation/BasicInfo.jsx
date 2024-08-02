@@ -29,7 +29,11 @@ const BasicInfo = ({formData, setFormData})=>{
                 <h1 className='text-hero text-2xl text-center font-medium max-md:text-xl mt-5'>Register Here</h1>
                 <div className='flex px-[12px] py-[6px] space-x-[16px] bg-white items-center justify-normal'>
                     <FaUser className='text-black'/>
-                    <input type="text" name="name" id="name" placeholder='Name' className='py-2 bg-white bg-opacity-0 outline-none text-black w-full'  autoComplete='off' autoSave='off' value={formData.username} onChange={(e)=>setFormData({...formData,username:e.target.value})}/>
+                    <input type="text" name="username" id="username" placeholder='Username' className='py-2 bg-white bg-opacity-0 outline-none text-black w-full'  autoComplete='off' autoSave='off' value={formData.username} onChange={(e)=>setFormData({...formData,username:e.target.value})}/>
+                </div>
+                <div className='flex px-[12px] py-[6px] space-x-[16px] bg-white items-center justify-normal'>
+                    <FaUser className='text-black'/>
+                    <input type="text" name="name" id="name" placeholder='Your name' className='py-2 bg-white bg-opacity-0 outline-none text-black w-full'  autoComplete='off' autoSave='off' value={formData.name} onChange={(e)=>setFormData({...formData,name:e.target.value})}/>
                 </div>
                 <div className='flex px-[12px] py-[6px] space-x-[16px] bg-white items-center justify-normal'>
                     <MdAlternateEmail className='text-black'/>
@@ -57,6 +61,7 @@ const BasicInfo = ({formData, setFormData})=>{
 BasicInfo.propTypes = {
     formData: PropTypes.shape({
         username: PropTypes.string,
+        name: PropTypes.string,
         email: PropTypes.string,
         password: PropTypes.string,
         confirm_password: PropTypes.string

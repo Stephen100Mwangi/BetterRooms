@@ -1,45 +1,75 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import { useEffect } from 'react'
-import { FaStar, FaHeart, FaThumbsUp } from 'react-icons/fa6'
-import ListingOutput from '../components/ListingOutput'
+import { useState, useEffect } from 'react';
+import { FaStar, FaHeart, FaThumbsUp } from 'react-icons/fa';
+import ListingOutput from '../components/ListingOutput';
 
 const Listings = () => {
-  useEffect(()=>{
-    fetch('http://127.0.0.1:5000/recommend?limit=20')
+  const [topListings, setTopListings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:5000/random_listings')
       .then(response => response.json())
       .then(data => {
-        if (data.status === 'no_results_knn') {
-          // setShowCBFPrompt(true);
-          console.log("No knn");
+        if (data.status === 'success') {
+          setTopListings(data.listings);
         } else {
-          // setAirbnbs(data.recommendations);
-          console.log(data);
+          setError('Error fetching listings');
         }
+        setIsLoading(false);
       })
-      .catch(error => console.error('Error:', error));
+      .catch(error => {
+        setError('Error: ' + error.message);
+        setIsLoading(false);
+      });
+  }, []);
 
-  },[])
+  if (isLoading) {
+    return (
+      <div className='min-h-[calc(100vh-120px)] bg-background p-[20px] flex items-center justify-center'>
+        Loading...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className='min-h-[calc(100vh-120px)] bg-background p-[20px] flex items-center justify-center'>
+        {error}
+      </div>
+    );
+  }
+
   return (
     <div className='min-h-[calc(100vh-120px)] bg-background p-[20px]'>
       <div className="flex flex-col space-y-3 m-5 mx-auto">
         <div className='w-full items-center justify-center flex'>
-          <h1 className='w-[450px] leading-relaxed text-center font-bold text-3xl max-md:text-2xl'>Available Homes Awaiting You <span className='decoration-clone text-hero'>Home Away From Home</span></h1>
+          <h1 className='w-[450px] leading-relaxed text-center font-bold text-3xl max-md:text-2xl'>
+            Available Homes Awaiting You{' '}
+            <span className='decoration-clone text-hero'>Home Away From Home</span>
+          </h1>
         </div>
         <div className="flex items-center justify-center gap-20 pb-20 pt-10 flex-wrap">
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/bed__.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/personalized.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/bed__.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/personal.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/sofa.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/bed__.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/kitchen.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/lights.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
-          <ListingOutput name='Great Views Homes' location='Liverpool' star={<FaStar />} stars={<FaStar />} price={890} image="./public/assets/bed.jpg" rate={4.5} like={<FaThumbsUp />} reviews={7800} favorite={<FaHeart />}></ListingOutput>
+          {topListings.map((listing, index) => (
+            <ListingOutput
+              key={listing.id || index} // It's better to use a unique identifier like `listing.id` if available
+              name={listing.name}
+              location={listing.neighbourhood_cleansed}
+              star={<FaStar />}
+              stars={<FaStar />}
+              price={listing.price}
+              image={listing.picture_url || '/assets/default.jpg'}
+              rate={listing.review_scores_rating}
+              like={<FaThumbsUp />}
+              reviews={listing.number_of_reviews}
+              favorite={<FaHeart />}
+            />
+          ))}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Listings
+export default Listings;

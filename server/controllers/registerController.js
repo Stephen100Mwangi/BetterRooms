@@ -3,9 +3,10 @@ import { User } from '../model/UserModel.js';
 
 const registerController = async (req, res) => {
   try {
-    const { username, email, password, confirm_password, faceScanSuccess, confirmRegister } = req.body;
+    const { username, name, email, password, confirm_password, faceScanSuccess, confirmRegister } = req.body;
 
     if (!username) return res.status(400).send({ message: "Username cannot be empty" });
+    if (!name) return res.status(400).send({ message: "Your name cannot be empty" });
     if (!email) return res.status(400).send({ message: "Email cannot be empty" });
     if (!password) return res.status(400).send({ message: "Password cannot be empty" });
     if (!confirm_password) return res.status(400).send({ message: "Password confirmation cannot be empty" });
@@ -20,13 +21,13 @@ const registerController = async (req, res) => {
       });
     }
 
-    const userExists = await User.findOne({email});
+    const userExists = await User.findOne({email} || {username});
     if (userExists) {
-      res.status(400).send({message:"User already exists"})
+      return res.status(400).send({message:"User already exists"})
     }
 
     const hashed_password = await bcrypt.hash(password, 10);
-    const newUser = new User({ username, email, password: hashed_password });
+    const newUser = new User({ username, name, email, password: hashed_password });
 
     await newUser.save();
     res.status(201).send({ message: "User registered successfully" });

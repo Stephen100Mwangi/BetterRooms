@@ -10,7 +10,7 @@ const Recommendations = () => {
 
       recommendations.forEach((rec) => {
         const recElement = document.createElement('div');
-        recElement.className = 'border-b border-gray-300 p-4 w-[400px] shadow-2xl p-3 rounded-md min-h-80';
+        recElement.className = 'border-b border-gray-300 p-4 w-[380px] shadow-2xl p-3 rounded-md min-h-80 max-md:w-[300px]';
         recElement.innerHTML = `
           <h2 class="text-xl font-semibold text-hero text-center">${rec.name}</h2>
           <p class="text-gray-600 roboto">Neighbourhood: ${rec.neighbourhood_cleansed}, ${rec.neighbourhood_group_cleansed}</p>
@@ -25,10 +25,9 @@ const Recommendations = () => {
           <a href="${rec.listing_url}" target="_blank" class="text-blue-500 underline">View Listing</a>
           <br><br>
           <div class="w-[90%] h-60 rounded-lg mt-5 flex items-center justify-center overflow-clip">
-          <img src="${rec.picture_url}" className="w-[100%] h-[100%] rounded-lg object-cover" alt="Listing Image">
+            <img src="${rec.picture_url}" className="w-[100%] h-[100%] rounded-lg object-cover" alt="Listing Image">
           </div>
           <div class="flex w-full justify-between">
-
           </div>
         `;
         recommendationsDiv.appendChild(recElement);
@@ -102,7 +101,7 @@ const Recommendations = () => {
       >
         Listen to Recommendations
       </button>
-      <div id="recommendations" className="w-full justify-center items-center grid grid-cols-3 gap-4 max-xl:grid-cols-2 max-md:grid-cols-1">
+      <div id="recommendations" className="w-full justify-center items-center grid grid-cols-3 gap-4 gap-y-5 max-lg:grid-cols-2 max-md:grid-cols-1">
         {/* Recommendations will be appended here */}
       </div>
     </div>
